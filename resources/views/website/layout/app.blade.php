@@ -62,7 +62,7 @@
             <h1 style="color: green">
                 Thank you for sharing
             </h1>
-            <p>I will contact you as soon as possible</p>
+            <p style="color:#fff;">I will contact you as soon as possible</p>
             
         </div>
     </div>
