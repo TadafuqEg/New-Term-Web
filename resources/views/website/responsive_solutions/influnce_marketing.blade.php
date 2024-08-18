@@ -64,7 +64,7 @@
             power of data to balance your marketing and media mix, ensuring every dollar is well spent for maximum
             impact.
         </p>
-        <a><button>Elevate Your Strategy Today!</button></a>
+        <a href="{{url('/mass')}}"><button>Elevate Your Strategy Today!</button></a>
     </div>
 </div>
 @endsection

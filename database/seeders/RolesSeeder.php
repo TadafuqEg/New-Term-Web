@@ -39,7 +39,7 @@ class RolesSeeder extends Seeder
         $admin_role->syncPermissions($permissions);
         $user1 = User::create([
             'name' => 'Admin1',
-           
+            'username'=>'admin1',
             'email' => 'admin1@gmail.com',
         
            
@@ -48,7 +48,7 @@ class RolesSeeder extends Seeder
         ]);
         $user2 = User::create([
             'name' => 'Admin2',
-           
+            'username'=>'admin2',
             'email' => 'admin2@gmail.com',
             
            
@@ -57,21 +57,21 @@ class RolesSeeder extends Seeder
         ]);
         $user3 = User::create([
             'name' => 'Admin3',
-           
+            'username'=>'admin3',
             'email' => 'admin3@gmail.com',
             
             'password' => Hash::make('gmadmin159!48@26#3'),
         ]);
         $user4 = User::create([
             'name' => 'Admin4',
-           
+            'username'=>'admin4',
             'email' => 'admin4@gmail.com',
         
             'password' => Hash::make('gmadmin159!48@26#4'),
         ]);
         $user5 = User::create([
             'name' => 'Admin5',
-           
+            'username'=>'admin5',
             'email' => 'admin5@gmail.com',
             
             'password' => Hash::make('gmadmin159!48@26#5'),

@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\AuthController;
+use App\Http\Controllers\API\HomeController;
+/*
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -19,10 +21,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 Route::post('/register',[AuthController::class,'register'])->name('register');
 Route::post('/login',[AuthController::class,'login'])->name('login');
-Route::post('/verifyOTP',[AuthController::class,'verifyOTP'])->name('verifyOTP');
+
 Route::middleware('auth:sanctum')->group( function () {
     Route::post('/logout',[AuthController::class,'logout'])->name('logout');
-
+    Route::post('/contact-us', [HomeController::class, 'contact_us'])->name('api-contact-us');
+    Route::post('/join-us', [HomeController::class, 'join_us'])->name('api-join-us');
+    
 });
 
 

@@ -13,46 +13,40 @@ use Illuminate\Support\Facades\Validator;
 
 class AuthController extends ApiController
 {
-    public function register(Request $request)
-    {
-       
+    public function register(Request $request){
+
         $validator  =   Validator::make($request->all(), [
             'name' => 'required|string|max:255',
+            'username' => 'required|string|max:255|unique:users',
+            'phone'=> 'required',
             'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:8|confirmed',
-            'phone' =>'required|unique:users,phone'
+            'password' => 'required|string|min:8',
             
             
         ]);
         // dd($request->all());
         if ($validator->fails()) {
 
-            return $this->sendError(null,$validator->errors(),400);
+            return $this->sendError(null,$validator->errors());
         }
-        $otpCode = generateOTP();
        
+        
+        
+        
         $user = User::create([
             'name' => $request->name,
+            'username' => $request->username,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'phone' => $request->phone,
-        
-            'OTP' => $otpCode,
-            
-            'device_token' => $request->device_token
+            'phone' => $request->phone
         ]);
+
         $role = Role::where('name','Client')->first();
             
         $user->assignRole([$role->id]);
-        // Generate OTP
-        
-
-        
-        // Send OTP via Email (or SMS)
-        Mail::to($request->email)->send(new SendOTP($otpCode));
-
-       
-        return $this->sendResponse(null,'OTP sent to your email address.',200);
+        $user->token=$user->createToken('api')->plainTextToken;
+        $user->picture=getFirstMediaUrl($user,$user->avatarCollection);
+        return $this->sendResponse($user,'Account Created Successfuly');
 
     }
 
@@ -60,61 +54,42 @@ class AuthController extends ApiController
     {
       
         $validator  =   Validator::make($request->all(), [
-            'email' => 'required|string|email',
-            'password' => 'required|string|min:8',
+            
+            'username' => 'required|string',
+            'password' => 'required|string',
         ]);
         // dd($request->all());
         if ($validator->fails()) {
 
             return $this->sendError(null,$validator->errors(),400);
         }
-        $user = User::where('email', $request->email)->first();
+        $success_login = false;
+        
+        $user = User::where('username', $request->username)
+            ->whereHas('roles', function ($q) {
+                $q->where('name', 'Client');
+            })
+            ->first();
 
-        if (!$user || !Hash::check($request->password, $user->password)) {
-            return $this->sendError(null,'Invalid credentials',401);
+        if ($user && Hash::check($request->password, $user->password)) {
+            $success_login = true;
+            if($request->device_token){
+                $user->device_token=$request->device_token;
+                $user->save();
+            }
         }
-
-        // Generate OTP
-        $otpCode = generateOTP();
-        $user->OTP= $otpCode ;
-        $user->save();
-    
-        // Send OTP via Email (or SMS)
-        Mail::to($request->email)->send(new SendOTP($otpCode));
-
-        return $this->sendResponse(null,'OTP sent to your email address.',200);
-    }
-
-    public function verifyOTP(Request $request)
-    {
-        $validator  =   Validator::make($request->all(), [
-            'email' => 'required|string|email',
-            'otp' => 'required|string',
-        ]);
-        // dd($request->all());
-        if ($validator->fails()) {
-
-            return $this->sendError(null,$validator->errors(),400);
-        }
-        $user = User::where('email', $request->email)
-                ->where('otp', $request->otp)
-                ->first();
-
-        if (!$user) {
-            return $this->sendError(null,'Invalid or expired OTP',401);
-
-        }
-        $user->device_token=$request->device_token;
-        $user->save();
-        $user->token=$user->createToken('api')->plainTextToken;
-        $user->picture=getFirstMediaUrl($user,$user->avatarCollection);
-       
         
 
-        // Here you can either log the user in or confirm their registration
+        if($success_login){
+            $user->token=$user->createToken('api')->plainTextToken;
+            $user->picture=getFirstMediaUrl($user,$user->avatarCollection);
+           
 
-        return $this->sendResponse($user,'OTP verified successfully.',200);
-
+        }else{
+            return $this->sendError(null,"The password is incorrect",400);
+           
+        }
+        return $this->sendResponse($user,null,200);
     }
 
     public function logout(Request $request){

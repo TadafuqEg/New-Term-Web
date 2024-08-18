@@ -8,10 +8,10 @@
                 <div class="icon cancel-btn">
                     <i class="fas fa-times"></i>
                 </div>
-                <li><a href="{{url('/')}}" class="f-l m-l">Home</a></li>
-                <li><a href="{{url('/about_us')}}">About Us</a></li>
+                <li><a href="{{url('/')}}" class="{{ Request::is('/') ? 'f-l' : '' }} m-l">Home</a></li>
+                <li><a href="{{url('/about_us')}}" class="{{ Request::is('about_us') ? 'f-l' : '' }}">About Us</a></li>
                 <li class="navbar-item">
-                    <a>LISTENING SERVICES <i class="fas fa-caret-down pp"></i></a>
+                    <a class="{{ Request::is('reputation') || Request::is('competitive') || Request::is('marketing') || Request::is('risk') || Request::is('influencer') || Request::is('authenticity') || Request::is('hoo_talk') ? 'f-l' : '' }}">LISTENING SERVICES <i class="fas fa-caret-down pp"></i></a>
                     <div class="dropdown-content">
                         <a href="{{url('/reputation')}}">Reputation & Perception Monitoring</a>
                         <a href="{{url('/competitive')}}">Competitive intelligence</a>
@@ -23,7 +23,7 @@
                     </div>
                 </li>
                 <li class="navbar-item">
-                    <a>RESPONSIVE SOLUTIONS <i class="fas fa-caret-down pp"></i></a>
+                    <a class="{{ Request::is('amplification') || Request::is('reputation-mange') || Request::is('tactical') || Request::is('influnce-marketing') || Request::is('large-scale') || Request::is('mass') ? 'f-l' : '' }}">RESPONSIVE SOLUTIONS <i class="fas fa-caret-down pp"></i></a>
                     <div class="dropdown-content">
                         <a href="{{url('/amplification')}}">Amplification</a>
                         <a href="{{url('/reputation-mange')}}">Reputation</a>
@@ -32,15 +32,15 @@
                         <a href="{{url('/large-scale')}}">Large scale</a>
                     </div>
                 </li>
-                <li><a href="{{url('/success_stories')}}">SUCCESS STORIES</a></li>
-                <li><a href="{{url('/contact')}}">Contact</a></li>
+                <li><a class="{{ Request::is('success_stories') ? 'f-l' : '' }}"href="{{url('/success_stories')}}">SUCCESS STORIES</a></li>
+                <li><a class="{{ Request::is('contact') ? 'f-l' : '' }}" href="{{url('/contact')}}">Contact</a></li>
                 <div class="navbar-login n-v1">
                     <a><button class="login-btn">Login</button></a>
                 </div>
             </ul>
             <div class="navbar-login n-v2">
                 <!-- <a><button class="free-btn">Start Free Trial</button></a> -->
-                <a><button class="login-btn">Login</button></a>
+                <a href="{{url('/login')}}"><button class="login-btn">Login</button></a>
                 <svg stroke="currentColor" stroke-width="0" viewBox="0 0 16 16"
                     class="dark-toggle hidden md:block text-purple-700 mt-1 ml-2 cursor-pointer dark:text-white"
                     height="28" width="28" xmlns="http://www.w3.org/2000/svg">

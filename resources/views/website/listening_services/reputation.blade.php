@@ -62,7 +62,7 @@
             ahead of the competition by understanding your audience, monitoring your brand's reputation, and
             identifying key influencers—all in one intuitive dashboard.
         </p>
-        <a><button>Take Control Today!</button></a>
+        <a href="{{url('/hoo_talk')}}"><button>Take Control Today!</button></a>
     </div>
 </div>
 @endsection

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Website\HomeController;
+use App\Http\Controllers\Website\AuthController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,3 +34,11 @@ Route::get('/influnce-marketing', [HomeController::class, 'influnce_marketing'])
 Route::get('/large-scale', [HomeController::class, 'large_scale'])->name('large_scale');
 Route::post('/contact-us', [HomeController::class, 'contact_us'])->name('website-contact-us');
 Route::post('/join-us', [HomeController::class, 'join_us'])->name('website-join-us');
+
+Route::get('/hoo_talk', [HomeController::class, 'hoo_talk'])->name('hoo_talk');
+Route::get('/mass', [HomeController::class, 'mass'])->name('mass');
+
+Route::get('/login', [AuthController::class, 'login_view'])->name('login_view');
+Route::post('/login', [AuthController::class, 'login'])->name('login.submit');
+Route::get('/sign_up', [AuthController::class, 'sign_up_view'])->name('sign_up_view');
+Route::post('/register', [AuthController::class, 'register'])->name('register.submit');

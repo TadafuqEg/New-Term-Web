@@ -46,6 +46,14 @@ class HomeController extends ApiController
       public function authenticity(){
         return view('website.listening_services.authenticity');
       }
+
+      public function hoo_talk(){
+        return view('website.hoo_talk');
+      }
+      public function mass(){
+        return view('website.mass');
+      }
+      
       ////////////////////////////////////////////responsive_solutions//////////////////////////////////
       public function amplification(){
         return view('website.responsive_solutions.amplification');
