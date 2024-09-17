@@ -11,7 +11,7 @@
     <meta property="og:image" content="https://dev.term.ae/website/assets/imgs/term_share02.png" />
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:url" content="https://dev.term.ae/website/assets/imgs/term_share02.png" />
+    <meta property="og:url" content="https://dev.term.ae/" />
     <meta property="og:type" content="website" />
     
     <!-- Twitter card tags (optional for better Twitter sharing) -->
@@ -28,7 +28,7 @@
     <meta property="og:image:height" content="630">
     <meta property="og:url" content="https://dev.term.ae/"> --}}
     <title>@yield('title', 'Term')</title>
-    <link rel="icon" href="{{asset('website/assets/imgs/logo2.svg')}}">
+    <link rel="icon" href="{{url('website/assets/imgs/term_share02.png')}}">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="{{asset('website/css/style.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
