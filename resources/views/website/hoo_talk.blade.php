@@ -163,7 +163,8 @@
        
         <div class="sec-1 log-sign">
             <div class="sec1-content secplus-content">
-                <h5 class="hoo-h5">Hoo Talk</h5>
+                {{-- <h5 class="hoo-h5">Hoo Talk</h5> --}}
+                <img class="hoo-img" loading="lazy" alt="" src="{{asset('website/assets/imgs/hootook.svg')}}" style="height:250px"/>
                 <h5>Self-Service Social Listening & Profiling Platform</h5>
                 <p>Unlock the power of real-time insights with our Self-Service Social Listening & Profiling Platform.
                     Stay ahead of the competition by understanding your audience, monitoring your brand's reputation,

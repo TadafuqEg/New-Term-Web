@@ -169,7 +169,8 @@
 
     <div class="sec-1 log-sign">
         <div class="sec1-content secplus-content">
-            <h5 class="hoo-h5">Mass Analytics</h5>
+            {{-- <h5 class="hoo-h5">Mass Analytics</h5> --}}
+            <img class="mass-img" loading="lazy" alt="" src="{{asset('website/assets/imgs/mass.webp')}}" style="height:150px ; margin-bottom:25px"/>
             <h5>Marketing Mix Modeling Solutions</h5>
             <p>Optimize your marketing strategy with our cutting-edge Marketing Mix Modeling Solutions. Harness the
                 power of data to balance your marketing and media mix, ensuring every dollar is well spent for
