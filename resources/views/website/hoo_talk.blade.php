@@ -1,5 +1,5 @@
 @extends('website.layout.app')
-@section('title', 'Term')
+@section('title', 'Term-hoo-talk')
 @section('style')
     <style>
         /* .log-sign {

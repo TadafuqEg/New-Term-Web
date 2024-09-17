@@ -1,5 +1,5 @@
 @extends('website.layout.app')
-@section('title', 'Term')
+@section('title', 'Term-about')
 @section('style')
 @endsection
 @section('content')
