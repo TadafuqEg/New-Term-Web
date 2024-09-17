@@ -109,10 +109,10 @@ class HomeController extends ApiController
         return view('website.markets.markets_luxury');
       }
       public function industries_ministries_departments(){
-        return view('website.industries.industries_ministries_departments');
+        return view('website.Industries.industries_ministries_departments');
       }
       public function industries_fashion(){
-        return view('website.industries.industries_fashion');
+        return view('website.Industries.industries_fashion');
       }
       
       
