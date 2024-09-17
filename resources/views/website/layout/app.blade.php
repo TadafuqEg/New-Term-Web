@@ -8,7 +8,7 @@
     <!-- Open Graph tags -->
     <meta property="og:title" content="Term" />
     <meta property="og:description" content="Listen, Respond, Succeed" />
-    <meta property="og:image" content="https://dev.term.ae/website/assets/imgs/term_share02.png" />
+    <meta property="og:image" content="https://dev.term.ae/website/assets/imgs/term.ico" />
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:url" content="https://dev.term.ae/" />
