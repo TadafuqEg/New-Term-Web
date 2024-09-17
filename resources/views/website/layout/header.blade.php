@@ -2,7 +2,7 @@
     <nav class="navbar">
         <div class="content">
             <div class="logo">
-                <a href="{{url('/')}}"><img id="logo-img" loading="lazy" src="{{asset('website/assets/imgs/Logo2.svg')}}" /></a>
+                <a href="{{url('/')}}"><img id="logo-img" loading="lazy" src="{{asset('website/assets/imgs/looogo1.png')}}" /></a>
             </div>
             <ul class="menu-list">
                 <div class="icon cancel-btn">
