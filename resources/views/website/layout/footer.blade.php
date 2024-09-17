@@ -2,7 +2,7 @@
     <div class="footer-content">
         <div class="footer-left">
             <div class="left-top">
-                <img id="footer-img" loading="lazy" src="{{asset('website/assets/imgs/Logo2_2.svg')}}" />
+                <img id="footer-img" loading="lazy" src="{{asset('website/assets/imgs/Logo2.svg')}}" />
                 <div class="footer-imgs">
                     <a href="#"><img id="footer-linkedin" loading="lazy" alt="" src="{{asset('website/assets/imgs/img8-2.png')}}" /></a>
                     <a href="#"><img id="footer-x" loading="lazy" alt="" src="{{asset('website/assets/imgs/img6-2.png')}}" /></a>
