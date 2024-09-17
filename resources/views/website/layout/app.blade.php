@@ -5,12 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta property="og:title" content="Term">
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="Term" />
+    <meta property="og:description" content="Listen, Respond, Succeed" />
+    <meta property="og:image" content="https://dev.term.ae/website/assets/imgs/term.jpg" />
+    <meta property="og:url" content="https://dev.term.ae/" />
+    <meta property="og:type" content="website" />
+    
+    <!-- Twitter card tags (optional for better Twitter sharing) -->
+    <meta name="twitter:card" content="Term">
+    <meta name="twitter:title" content="Term">
+    <meta name="twitter:description" content="Listen, Respond, Succeed.">
+    <meta name="twitter:image" content="https://dev.term.ae/website/assets/imgs/term.jpg">
+
+
+    {{-- <meta property="og:title" content="Term">
     <meta property="og:description" content="Listen, Respond, Succeed">
     <meta property="og:image" content="https://dev.term.ae/website/assets/imgs/term.ico">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:url" content="https://dev.term.ae/">
+    <meta property="og:url" content="https://dev.term.ae/"> --}}
     <title>@yield('title', 'Term')</title>
     <link rel="icon" href="{{asset('website/assets/imgs/logo2.svg')}}">
     <meta name="csrf-token" content="{{ csrf_token() }}">
