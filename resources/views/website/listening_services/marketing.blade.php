@@ -2,9 +2,9 @@
 @section('title', 'Term')
 @section('content')
 <div class="contain">
+    @include('website.layout.fixed_div')
 
     <div class="sec-1 marketing">
-        <!-- <img loading="lazy" alt="" src="../assets/imgs/mov3.gif" /> -->
         <div class="sec1-content">
 
             <h5>Marketing campaign<br /> Evaluation</h5>
@@ -12,18 +12,18 @@
                 provide you with a comprehensive understanding of how effectively your marketing budget translates
                 into profits and competitive advantage.
             </p>
-            <a href="{{url('/contact')}}"><button class="book-call">Contact Us</button></a>
+            <a href='{{url('/contact')}}'><button class="book-call">Contact Us</button></a>
         </div>
     </div>
 
-    <div class="sec-2">
-        <div class="sec2-content">
+    <div class="sec-2 new">
+        <div class="sec2-content new-bac">
             <h5 class="h-5">Why is it important to evaluate a<br /> marketing campaign?</h5>
             <p class="pp">By evaluating marketing campaigns, we can determine what works and what doesn't with your
                 business. This allows you to understand your campaigns performance, your target audience and the
                 market shift.
             </p>
-            <img loading="lazy" alt="" src="{{asset('website/assets/imgs/bac-1.png')}}" />
+            <!-- <img loading="lazy" alt="" src="../assets/imgs/bac-1.png" /> -->
         </div>
     </div>
     <div class="monitoring">
@@ -31,7 +31,7 @@
         <p>
             We employ a range of critical methods to provide a thorough evaluation of your marketing campaign.
         </p>
-        <div class="marketing-content">
+        <div class="compatitve-content">
             <div class="monitoring-card">
                 <h4>Compaign Reach</h4>
             </div>

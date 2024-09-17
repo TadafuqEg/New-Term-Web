@@ -2,110 +2,89 @@
 @section('title', 'Term')
 @section('content')
 <div class="contain">
+    @include('website.layout.fixed_div')
 
-    <div class="sec-1 ">
-        <!-- <img loading="lazy" alt="" src="./assets/imgs/mov3.gif" /> -->
+
+    <div class="sec-1">
         <div class="sec1-content">
             <h5>Success Stories</h5>
         </div>
     </div>
 
     <div class="success-stories">
-
-        <div class="success-circles" id="imageContainer">
-
-            <div class="circle2 fl">
-                <div class="circle-content2">
+        <h5 class="markt">Markets</h5>
+        <div class="monitoring-content succ-stories">
+            <a class="monitoring-card" href="{{url('/markets-cryptocurrency')}}" >
+                <div>
                     <h5>Cryptocurrency</h5>
-                    <p class="d-n2">circle 1 Multicultural & Multilanguage Team</p>
                 </div>
-            </div>
-            <div class="circle2 fl">
-                <div class="circle-content2">
+            </a>
+            <a class="monitoring-card" href="{{url('/markets-banking-insurance')}}" >
+                <div >
                     <h5>Banking / Insurance</h5>
-                    <p class="d-n2">circle 2 circle 1 Multicultural & Multilanguage Team</p>
                 </div>
-            </div>
-            <div class="circle2 fl">
-                <div class="circle-content2">
+            </a>
+            <a class="monitoring-card" href="{{url('/markets-education')}}" >
+                <div>
                     <h5>Education</h5>
-                    <p class="d-n2">circle 3 circle 1 Multicultural & Multilanguage Team</p>
                 </div>
+            </a>
+           <a class="monitoring-card" href="{{url('/markets-airlines')}}" >
+            <div>
+                <h5>Airlines</h5>
             </div>
-            <div class="circle2 fl">
-                <div class="circle-content2">
-                    <h5>Fashion</h5>
-                    <p class="d-n2">circle 4 circle 1 Multicultural & Multilanguage Team</p>
-                </div>
-            </div>
-            <div class="circle2 fl">
-                <div class="circle-content2">
-                    <h5>Airlines</h5>
-                    <p class="d-n2">circle 5 circle 1 Multicultural & Multilanguage Team</p>
-                </div>
-            </div>
-            <div class="circle2 fl">
-                <div class="circle-content2">
+           </a>
+            <a class="monitoring-card" href="{{url('/markets-mass-retail')}}" >
+                <div>
                     <h5>Mass Retail</h5>
-                    <p class="d-n2">circle 6 circle 1 Multicultural & Multilanguage Team </p>
                 </div>
-            </div>
-            <div class="circle2 fl hidd">
-                <div class="circle-content2">
-                    <h5>Cryptocurrency</h5>
-                    <p class="d-n2">circle 1 Multicultural & Multilanguage Team</p>
+            </a>
+            <a class="monitoring-card" href="{{url('/markets-telco')}}" >
+                <div>
+                    <h5>Telco</h5>
                 </div>
-            </div>
-            <div class="circle2 fl hidd">
-                <div class="circle-content2">
-                    <h5>Banking / Insurance</h5>
-                    <p class="d-n2">circle 2 circle 1 Multicultural & Multilanguage Team</p>
+            </a>
+            <a class="monitoring-card" href="{{url('/markets-oil-gas')}}" >
+                <div>
+                    <h5>Oil & Gas</h5>
                 </div>
-            </div>
-            <div class="circle2 fl hidd">
-                <div class="circle-content2">
-                    <h5>Education</h5>
-                    <p class="d-n2">circle 3 circle 1 Multicultural & Multilanguage Team</p>
+            </a>
+            <a class="monitoring-card" href="{{url('/markets-theme-amusement-parks')}}" >
+                <div>
+                    <h5>Theme / Amusement Parks</h5>
                 </div>
-            </div>
-            <div class="circle2 fl hidd">
-                <div class="circle-content2">
+            </a>
+            <a class="monitoring-card" href="{{url('/markets-FMCG')}}" >
+                <div>
+                    <h5>FMCG</h5>
+                </div>
+            </a>
+            <a class="monitoring-card" href="{{url('/markets-luxury')}}" >
+                <div>
+                    <h5>Luxury</h5>
+                </div>
+            </a>
+            <h5 class="markt" style="display: block; width: 100%;text-align: center; margin: 20px 0;">Industries
+            </h5>
+            
+            <a class="monitoring-card" href="{{url('/industries-ministries-departments')}}" >
+                <div>
+                    <h5>Ministries / Departments</h5>
+                </div>
+            </a>
+            <a class="monitoring-card" href="{{url('/industries-fashion')}}" >
+                <div>
                     <h5>Fashion</h5>
-                    <p class="d-n2">circle 4 circle 1 Multicultural & Multilanguage Team</p>
                 </div>
-            </div>
+            </a>
         </div>
-        <img id="toggleImage" src="{{asset('website/assets/imgs/img31.png')}}" alt="Toggle Image">
+
+
     </div>
 
 
 </div>
 @endsection
 @push('scripts')
-<script>
-    const imageContainer = document.getElementById('imageContainer');
-    const toggleImage = document.getElementById('toggleImage');
-    let isExpanded = false;
 
-    toggleImage.addEventListener('click', function () {
-        const allImages = imageContainer.querySelectorAll('.fl');
-
-        if (isExpanded) {
-            // Hide extra images (from index 3 onwards)
-            for (let i = 6; i < allImages.length; i++) {
-                allImages[i].classList.add('hidd');
-            }
-            toggleImage.src = "{{asset('website/assets/imgs/img31.png')}}"; // Image for "Show More"
-        } else {
-            // Show all images
-            for (let i = 3; i < allImages.length; i++) {
-                allImages[i].classList.remove('hidd');
-            }
-            toggleImage.src = "{{asset('website/assets/imgs/img32.png')}}"; // Image for "Show Less"
-        }
-
-        isExpanded = !isExpanded;
-    });
-
-</script>
 @endpush

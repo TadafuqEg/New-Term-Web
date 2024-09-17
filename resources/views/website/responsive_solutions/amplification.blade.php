@@ -2,7 +2,7 @@
 @section('title', 'Term')
 @section('content')
 <div class="contain">
-
+    @include('website.layout.fixed_div')
     <div class="sec-1 amplify">
         <!-- <img loading="lazy" alt="" src="../assets/imgs/mov3.gif" /> -->
         <div class="sec1-content">
@@ -12,7 +12,7 @@
                 mitigate potential risks and provide you the tools necessary to fight back against unforeseen
                 challenges to ensure your brand stands strong in a competitive market
             </p>
-            <a href="{{url('/contact')}}"><button class="book-call">Contact Us</button></a>
+            <a href='{{url('/contact')}}'><button class="book-call">Contact Us</button></a>
         </div>
     </div>
 
@@ -25,12 +25,12 @@
                 strategy is key to achieving business growth and we ensure your brand maintains positive reputation
                 even during crisis
             </p>
-            <img loading="lazy" alt="" src="{{asset('website/assets/imgs/img40.png')}}" />
+            <!-- <img loading="lazy" alt="" src="../assets/imgs/img40.png" /> -->
         </div>
     </div>
 
 
-    <div class="monitoring amplify-bottom">
+    <div class="monitoring">
         <h5>How to Implement Amplification,<br /> Mitigation, and Fight-Back Strategies?</h5>
         <p>We offer a strategic approach according to your unique business needs</p>
         <div class="monitoring-content">
@@ -54,6 +54,7 @@
             </div>
 
         </div>
+        
     </div>
 
     @include('website.layout.form')

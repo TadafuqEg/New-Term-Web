@@ -2,16 +2,15 @@
 @section('title', 'Term')
 @section('content')
 <div class="contain">
-
-    <div class="sec-1">
-        <!-- <img loading="lazy" alt="" src="../assets/imgs/mov3.gif" /> -->
+    @include('website.layout.fixed_div')
+    <div class="sec-1 lar-scale">
         <div class="sec1-content">
 
             <h5>Large scale micro-targeting</h5>
             <p>Unlock the power of precision marketing with TERM’s Large-Scale MicroTargeting solutions. Reach the
                 right audience with strategies designed to maximize your impact in the market
             </p>
-            <a href="{{url('/contact')}}"><button class="book-call">Contact Us</button></a>
+            <a href='{{url('/contact')}}'><button class="book-call">Contact Us</button></a>
         </div>
     </div>
 
@@ -24,7 +23,7 @@
                 efforts are not only efficient but also highly effective, resulting in improved engagement and
                 campaigns.
             </p>
-            <img loading="lazy" alt="" src="{{asset('website/assets/imgs/img40.png')}}" />
+            <!-- <img loading="lazy" alt="" src="../assets/imgs/img40.png" /> -->
         </div>
     </div>
 

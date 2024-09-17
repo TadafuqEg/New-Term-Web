@@ -2,16 +2,16 @@
 @section('title', 'Term')
 @section('content')
 <div class="contain repuation">
+    @include('website.layout.fixed_div')
 
-    <div class="sec-1 repu">
-        <!-- <img loading="lazy" alt="" src="../assets/imgs/mov3.gif" /> -->
+    <div class="sec-1 rep">
         <div class="sec1-content">
 
             <h5>Reputation Management</h5>
             <p>We offer the necessary tools specialized in Reputation Management to help you safeguard your brand’s
                 image, address potential threats, and build a positive, lasting impression
             </p>
-            <a href="{{url('/contact')}}"><button class="book-call">Contact Us</button></a>
+            <a href='{{url('/contact')}}'><button class="book-call">Contact Us</button></a>
         </div>
     </div>
 
@@ -23,12 +23,12 @@
                 strategies designed to keep your brand’s reputation intact and ensure it remains resilient against
                 crises and risks
             </p>
-            <img loading="lazy" alt="" src="{{asset('website/assets/imgs/img40.png')}}" />
+            <!-- <img loading="lazy" alt="" src="../assets/imgs/img40.png" /> -->
         </div>
     </div>
 
 
-    <div class="monitoring repu-bottom">
+    <div class="monitoring">
         <h5>How to Implement Reputation Management?</h5>
         <p>We build strategic approaches tailored to your company’s unique needs backed by the research and insights
             capabilities of TERM
@@ -55,7 +55,6 @@
 
         </div>
     </div>
-
     @include('website.layout.form')
     <div class="self-services">
         <h3>Marketing Mix Modeling Solutions</h3>

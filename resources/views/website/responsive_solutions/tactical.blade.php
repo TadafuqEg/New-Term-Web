@@ -2,15 +2,13 @@
 @section('title', 'Term')
 @section('content')
 <div class="contain">
-
+    @include('website.layout.fixed_div')
     <div class="sec-1 tactical">
-        <!-- <img loading="lazy" alt="" src="../assets/imgs/mov3.gif" /> -->
         <div class="sec1-content">
-
             <h5>Tactical Content<br /> campaigns</h5>
             <p>We deliver strategic, high-impact content that resonates with your audience and elevates your brand
             </p>
-            <a href="{{url('/contact')}}"><button class="book-call">Contact Us</button></a>
+            <a href='{{url('/contact')}}'><button class="book-call">Contact Us</button></a>
         </div>
     </div>
 
@@ -22,12 +20,12 @@
                 build and maintain a strong brand presence, to quickly adapt to market changes and stay relevant and
                 to increase visibility
             </p>
-            <img loading="lazy" alt="" src="{{asset('website/assets/imgs/img40.png')}}" />
+            <!-- <img loading="lazy" alt="" src="../assets/imgs/img40.png" /> -->
         </div>
     </div>
 
 
-    <div class="monitoring tactical-bottom">
+    <div class="monitoring">
         <h5>How to Implement Tactical Content Campaigns?</h5>
         <p>We’re pioneering a fresh approach to implement tactical content campaigns. We ensure your needs and behaviors guide every decision we make</p>
         <div class="monitoring-content">
@@ -52,6 +50,7 @@
 
         </div>
     </div>
+
 
     @include('website.layout.form')
     <div class="self-services">

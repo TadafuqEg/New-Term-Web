@@ -2,27 +2,26 @@
 @section('title', 'Term')
 @section('content')
 <div class="contain">
-
+    @include('website.layout.fixed_div')
     <div class="sec-1 competitive">
-        <!-- <img loading="lazy" alt="" src="../assets/imgs/mov3.gif" /> -->
         <div class="sec1-content">
 
             <h5>Competitive intelligence</h5>
             <p>We gather relevant and reliable information about your competitors, analyzing every facet of the data
                 to establish and enhance a competitive advantage for you
             </p>
-            <a href="{{url('/contact')}}"><button class="book-call">Contact Us</button></a>
+            <a href='{{url('/contact')}}'><button class="book-call">Contact Us</button></a>
         </div>
     </div>
 
-    <div class="sec-2">
-        <div class="sec2-content">
+    <div class="sec-2 new">
+        <div class="sec2-content new-bac">
             <h5 class="h-5">Why competitive <br />intelligence matters?</h5>
             <p class="pp"> Competitive intelligence offers invaluable competitive insights and impactful data about
                 your competitors' landscape, their tactics and their behaviors. Knowing their objectives enables you
                 to keep track of them, shape your brand and boost your strategy in the best way to get ahead.
             </p>
-            <img loading="lazy" alt="" src="{{asset('website/assets/imgs/bac-1.png')}}" />
+            <!-- <img loading="lazy" alt="" src="../assets/imgs/bac-1.png" /> -->
         </div>
     </div>
     <div class="compatitve">
@@ -30,8 +29,8 @@
         <p>Our Competitive Intelligence offers your business a deep understanding of the market dynamics and
             strategic insights using proven techniques
         </p>
-        <div class="compatitve-content">
-            <img src="{{asset('website/assets/imgs/img20.png')}}" alt="">
+        <div class="compatitve-content ">
+            <!-- <img src="../assets/imgs/img20.png" alt=""> -->
             <div class="compatitive-cards">
                 <div class="compatitive-card">
                     <h4>Competitive Benchmarking</h4>

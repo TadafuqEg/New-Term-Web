@@ -2,9 +2,9 @@
 @section('title', 'Term')
 @section('content')
 <div class="contain">
+    @include('website.layout.fixed_div')
+    <div class="sec-1 response-marketing">
 
-    <div class="sec-1">
-        <!-- <img loading="lazy" alt="" src="../assets/imgs/mov3.gif" /> -->
         <div class="sec1-content">
 
             <h5>Influence marketing<br /> operations</h5>
@@ -12,7 +12,7 @@
                 purchasing decisions. At TERM, we ensure that your brand’s message is delivered authentically and
                 effectively to your target audience.
             </p>
-            <a href="{{url('/contact')}}"><button class="book-call">Contact Us</button></a>
+            <a href='{{url('/contact')}}'><button class="book-call">Contact Us</button></a>
         </div>
     </div>
 
@@ -24,7 +24,7 @@
                 TERM, we drive significant traffic to your business, converting engaged followers into leads and
                 customers.
             </p>
-            <img loading="lazy" alt="" src="{{asset('website/assets/imgs/img40.png')}}" />
+            <!-- <img loading="lazy" alt="" src="../assets/imgs/img40.png" /> -->
         </div>
     </div>
 

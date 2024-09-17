@@ -40,10 +40,13 @@
                 <span id="service-error" class="error-message" style="color:#fff;"></span>
             </div>
             <div class="privacy-accept">
-                <input type="checkbox" />
+                <input type="checkbox" id="privacy-accept" value="0" />
                 <span>I have read and accept the Privacy police.</span>
             </div>
-            <a><button>Send Message</button></a>
+            <div style="text-align: left;">
+                <span id="privacy-accept-error" class="error-message" style="color:#fff;"></span>
+            </div>
+            <a><button type="submit">Send Message</button></a>
         </div>
     </form>
 </div>

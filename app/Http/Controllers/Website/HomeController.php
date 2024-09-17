@@ -78,4 +78,43 @@ class HomeController extends ApiController
         JoinUs::create(['name'=>$request->name,'co_email'=>$request->co_email,'service'=>$request->service]);
         return $this->sendResponse(null,'successfuly');
       }
+      public function markets_cryptocurrency(){
+        return view('website.markets.markets_cryptocurrency');
+      }
+      public function markets_banking_insurance(){
+        return view('website.markets.markets_banking_insurance');
+      }
+      public function markets_education(){
+        return view('website.markets.markets_education');
+      }
+      public function markets_airlines(){
+        return view('website.markets.markets_airlines');
+      }
+      public function markets_mass_retail(){
+        return view('website.markets.markets_mass_retail');
+      }
+      public function markets_telco(){
+        return view('website.markets.markets_telco');
+      }
+      public function markets_oil_gas(){
+        return view('website.markets.markets_oil_gas');
+      }
+      public function markets_theme_amusement_parks(){
+        return view('website.markets.markets_theme_amusement_parks');
+      }
+      public function markets_FMCG(){
+        return view('website.markets.markets_FMCG');
+      }
+      public function markets_luxury(){
+        return view('website.markets.markets_luxury');
+      }
+      public function industries_ministries_departments(){
+        return view('website.industries.industries_ministries_departments');
+      }
+      public function industries_fashion(){
+        return view('website.industries.industries_fashion');
+      }
+      
+      
+
 }

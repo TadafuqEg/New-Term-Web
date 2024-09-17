@@ -1,26 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Term</title>
+    <title>Term-signup</title>
+    <link rel="icon" href="{{asset('website/assets/imgs/Logo2.svg')}}" style="transform: scale(.65);">
     <link rel="stylesheet" href="{{asset('website/css/style.css')}}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
     <style>
+        .log-sign{
+            background-image: url("{{asset('website/assets/imgs/login.gif')}}");
+        }
         .login-form {
             width: 40%;
-            background: rgba(12, 14, 15, 0.65);
+            background: #fff;
+            
             padding: 70px 40px;
             border: 1px solid rgba(130, 130, 130, 1);
             border-radius: 10px;
             z-index: 9;
         }
         .dark .login-form{
-            background: #fff;
+            background: rgba(12, 14, 15, 0.85);
         }
         .username,
         .password {
@@ -52,10 +56,13 @@
             padding-left: 10px;
             font-size: 16px;
             font-weight: 400;
-            color: rgba(130, 130, 130, 1);
+            color: #fff;
             background: transparent;
         }
-
+        .dark .username input,
+        .dark .password input{
+            color: #000;
+        } 
         .form-btn {
             width: 100%;
             height: 48px;
@@ -183,14 +190,14 @@
         <nav class="navbar">
             <div class="content content2">
                 <div class="logo">
-                    <a href="{{url('/')}}"><img id="logo-img" loading="lazy" src="{{asset('website/assets/imgs/Logo.png')}}" /></a>
+                    <a href="{{url('/')}}">><img id="logo-img" loading="lazy" src="{{asset('website/assets/imgs/Logo2.svg')}}" /></a>
                 </div>
                 <ul class="menu-list"
                     style="background-color:transparent; border: none; text-align: right; justify-content: right;  width: 80%;">
                     <div class="icon cancel-btn">
                         <i class="fas fa-times"></i>
                     </div>
-                    <a href="{{url('/login')}}" style="font-size: 14px; font-weight: 600; cursor: pointer; text-decoration: none; color: #fff;">Already have an account?</a>
+                    <a href="{{url('/login')}}" style='font-size: 14px; font-weight: 600; cursor: pointer; text-decoration: none; color:var(--color);'>Already have an account?</a>
                 </ul>
                 <div class="navbar-login n-v2">
                     <a href="{{url('/login')}}"><button class="login-btn">Login</button></a>
@@ -215,7 +222,7 @@
 
     <div class="contain contain2">
 
-        <div class="sec-1 reputation log" style="flex-direction: column;">
+        <div class="sec-1" style="flex-direction: column;">
             <div class="login-text">
                 <h5>Welcome To Term</h5>
                 <p>Register Your account</p>
@@ -274,23 +281,23 @@
         <div class="footer-content">
             <div class="footer-left">
                 <div class="left-top">
-                    <img id="footer-img" loading="lazy" src="{{asset('website/assets/imgs/Logo.png')}}" />
+                    <img id="footer-img" loading="lazy" src="{{asset('website/assets/imgs/Logo2.svg')}}" />
                     <div class="footer-imgs">
-                        <a href=""><img id="footer-linkedin" loading="lazy" alt="" src="{{asset('website/assets/imgs/img8.png')}}" /></a>
-                        <a href=""><img id="footer-x" loading="lazy" alt="" src="{{asset('website/assets/imgs/img6.png')}}" /></a>
-                        <a href=""><img id="footer-whatsapp" loading="lazy" alt="" src="{{asset('website/assets/imgs/img7.png')}}" /></a>
+                        <a href="#"><img id="footer-linkedin" loading="lazy" alt="" src="{{asset('website/assets/imgs/img8-2.png')}}" /></a>
+                        <a href="#"><img id="footer-x" loading="lazy" alt="" src="{{asset('website/assets/imgs/img6-2.png')}}" /></a>
+                        <a href="#"><img id="footer-whatsapp" loading="lazy" alt="" src="{{asset('website/assets/imgs/img7-2.png')}}" /></a>
                     </div>
                 </div>
                 <div class="left-bottom">
-                    <a href="">Terms and Conditions</a>
-                    <a href="">Privacy Policy</a>
-                    <a href="">Privacy Policy</a>
+                    <a href="#">Terms and Conditions</a>
+                    <a href="#">Privacy Policy</a>
                 </div>
             </div>
             <div class="footer-right f-r">
                 <p>Phone: +20540845510</p>
-                <p>Address: 12st, Time Square, New York, USA</p>
-                <p><a onclick="sendEmail()">info@term.com</a></p>
+                <p>Address:Oce 2210 Concord Tower, Dubai <br /> Media City, Dubai, UAE</p>
+                <p><a onclick="sendEmail()">info@term.ae</a></p>
+                <a href="{{url('/contact')}}" class="footer-contact">Contact Us</a>
             </div>
         </div>
     </div>
@@ -304,26 +311,31 @@
             const whatsapp = document.getElementById("footer-whatsapp");
             const twitter = document.getElementById("footer-x");
             const linkedin = document.getElementById("footer-linkedin");
+            const listen = document.getElementById("lis-btn")
+            const listen2 = document.getElementById("lis-btn2")
 
             toggle.addEventListener("click", function () {
                 body.classList.toggle("dark");
 
                 if (body.classList.contains("dark")) {
-                    logo.src = "{{asset('website/assets/imgs/Logo2.png')}}";
-                    footer.src = "{{asset('website/assets/imgs/Logo2.png')}}";
-                    whatsapp.src = "{{asset('website/assets/imgs/img7-2.png')}}";
-                    linkedin.src = "{{asset('website/assets/imgs/img8-2.png')}}";
-                    twitter.src = "{{asset('website/assets/imgs/img6-2.png')}}";
-                } else {
-                    logo.src = "{{asset('website/assets/imgs/Logo.png')}}";
-                    footer.src = "{{asset('website/assets/imgs/Logo.png')}}";
+                    logo.src = "{{asset('website/assets/imgs/Logo.svg')}}";
+                    footer.src = "{{asset('website/assets/imgs/Logo.svg')}}";
                     whatsapp.src = "{{asset('website/assets/imgs/img7.png')}}";
                     linkedin.src = "{{asset('website/assets/imgs/img8.png')}}";
                     twitter.src = "{{asset('website/assets/imgs/img6.png')}}";
+                    listen.src = "{{asset('website/assets/imgs/img3.png')}}";
+                    listen2.src = "{{asset('website/assets/imgs/img4.png')}}";
+                } else {
+                    logo.src = "{{asset('website/assets/imgs/Logo2.svg')}}";
+                    footer.src = "{{asset('website/assets/imgs/Logo2.svg')}}";
+                    whatsapp.src = "{{asset('website/assets/imgs/img7-2.png')}}";
+                    linkedin.src = "{{asset('website/assets/imgs/img8-2.png')}}";
+                    twitter.src = "{{asset('website/assets/imgs/img6-2.png')}}";
+                    listen.src = "{{asset('website/assets/imgs/img3-2.png')}}";
+                    listen2.src = "{{asset('website/assets/imgs/img4-2.png')}}";
                 }
             });
         });
     </script>
 </body>
-
 </html>
