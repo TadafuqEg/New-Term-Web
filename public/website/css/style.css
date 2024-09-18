@@ -2515,7 +2515,7 @@ select::-ms-expand {
 
 @media(max-width:1295px) {
   .sec-1 {
-    height: 100vh;
+    height: 65vh;
     background-position: top;
   }
 
@@ -3244,7 +3244,7 @@ select::-ms-expand {
   }
 
   .sec-1 {
-    height: 95vh;
+    height: 60vh;
     background-size: contain;
   }
 
@@ -3255,13 +3255,14 @@ select::-ms-expand {
   .sec-1 .sec1-content h5 {
     font-size: 22px;
     text-align: center;
+    padding-top: 15%;
   }
 
   .sec-1 .sec1-content p {
     width: 85%;
     margin: auto;
     font-size: 12px;
-    padding: 10px 0 20px 0;
+    padding: 5px 0 10px 0;
     text-align: center;
   }
 
@@ -3700,7 +3701,7 @@ select::-ms-expand {
   }
 
   .sec-1 .sec1-content p {
-    padding: 25px 0;
+    padding: 10px 0;
   }
 
   .meet-cards .monitoring-card {
@@ -3803,7 +3804,20 @@ select::-ms-expand {
     height:120px !important;
   }
 }
+@media(max-width:376px) {
+  .sec-1{
+    height: 75vh;
 
+  }
+
+  }
+@media(max-width:350px) {
+    .sec-1{
+      height: 60vh;
+  
+    }
+  
+    }
 /* @media(max-width:391px) {
   .unique-content {
     height: 350vh;
@@ -3814,13 +3828,7 @@ select::-ms-expand {
 
 }
 
-@media(max-width:375px) {
-  .unique-content {
-    height: 320vh;
-    margin-bottom: 0;
-    margin-top: 40px;
 
-  }
 } */
 
 
