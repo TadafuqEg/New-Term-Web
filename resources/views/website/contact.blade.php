@@ -15,7 +15,7 @@
     </div>
     <div class="contact-form" style="border-top:0px !important;">
         <div class="contact-left">
-            <h5>Let's talking</h5>
+            <h5>Let's talk</h5>
             <p>Questions, comments, or suggestions? Simply fill in the form and we’ll be in touch shortly.</p>
             <div class="left-content">
                 <div class="location">
