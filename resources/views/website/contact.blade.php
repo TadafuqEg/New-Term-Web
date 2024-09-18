@@ -7,15 +7,15 @@
 <div class="contain">
     @include('website.layout.fixed_div')
 
-    <div class="sec-1">
+    <div class="sec-1" style="height: 0px;">
         <!-- <img loading="lazy" alt="" src="./assets/imgs/mov3.gif" /> -->
-        <div class="sec1-content">
+        {{-- <div class="sec1-content">
             <h5>Contact Us </h5>
-        </div>
+        </div> --}}
     </div>
-    <div class="contact-form">
+    <div class="contact-form" style="border-top:0px !important;">
         <div class="contact-left">
-            <h5>Let's talk with us</h5>
+            <h5>Let's talking</h5>
             <p>Questions, comments, or suggestions? Simply fill in the form and we’ll be in touch shortly.</p>
             <div class="left-content">
                 <div class="location">

@@ -873,7 +873,7 @@ text-decoration: none;
   justify-content: center;
   gap: 60px;
   color: var(--color);
-  background-image: url(../assets/imgs/bac-4.png);
+  /* background-image: url(../assets/imgs/bac-4.png); */
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
