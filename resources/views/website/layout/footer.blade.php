@@ -16,7 +16,7 @@
         </div>
         <div class="footer-right f-r">
             <p>Phone: +971540845510</p>
-            <p>Address:Oce 2210 Concord Tower, Dubai <br /> Media City, Dubai, UAE</p>
+            <p>Address: Office 2210 Concord Tower, Dubai<br /> Media City, Dubai, UAE</p>
             <p><a onclick="sendEmail()">info@term.ae</a></p>
             <a href="{{url('/contact')}}" class="footer-contact">Contact Us</a>
         </div>

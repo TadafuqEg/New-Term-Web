@@ -20,7 +20,7 @@
             <div class="left-content">
                 <div class="location">
                     <img loading="lazy" alt="" src="{{asset('website/assets/imgs/img28.png')}}" style="width: 23px; height: 28px;"/>
-                    <p>Oce 2210 Concord Tower, Dubai<br />Media City, Dubai, UAE</p>
+                    <p>Office 2210 Concord Tower, Dubai<br />Media City, Dubai, UAE</p>
                 </div>
                 <div class="phone">
                     <img loading="lazy" alt="" src="{{asset('website/assets/imgs/img29.png')}}" />
