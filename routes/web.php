@@ -56,3 +56,6 @@ Route::get('/markets-luxury', [HomeController::class, 'markets_luxury'])->name('
 
 Route::get('/industries-ministries-departments', [HomeController::class, 'industries_ministries_departments'])->name('industries_ministries_departments');
 Route::get('/industries-fashion', [HomeController::class, 'industries_fashion'])->name('industries_fashion');
+Route::get('/emdad-products', function () {
+    return response()->file(public_path('assets/emdad_products.pdf'));
+})->name('emdad_products');
