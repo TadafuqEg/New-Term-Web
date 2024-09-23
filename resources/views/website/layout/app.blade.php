@@ -199,6 +199,11 @@
             const linkedin = document.getElementById("footer-linkedin");
             const listen = document.getElementById("lis-btn")
             const listen2 = document.getElementById("lis-btn2")
+            const change1 = document.getElementById("change-1")
+            const change2 = document.getElementById("change-2")
+            const change3 = document.getElementById("change-3")
+            const change4 = document.getElementById("change-4")
+            // const change5 = document.getElementById("change-5")
 
             toggle.addEventListener("click", function () {
                 body.classList.toggle("dark");
@@ -209,18 +214,36 @@
                     whatsapp.src = "{{asset('website/assets/imgs/img7.png')}}";
                     linkedin.src = "{{asset('website/assets/imgs/img8.png')}}";
                     twitter.src = "{{asset('website/assets/imgs/img6.png')}}";
-                    listen.src = "{{asset('website/assets/imgs/img3.png')}}";
-                    listen2.src = "{{asset('website/assets/imgs/img4.png')}}";
+                    
+                    changeImageSource(listen, 'website/assets/imgs/img3.png');
+                    changeImageSource(listen2, 'website/assets/imgs/img4.png');
+                    changeImageSource(change1, 'website/assets/imgs/trust/img57.png');
+                    changeImageSource(change2, 'website/assets/imgs/trust/img54.png');
+                    changeImageSource(change3, 'website/assets/imgs/trust/img47.png');
+                    changeImageSource(change4, 'website/assets/imgs/trust/img46.png');
+                    // change5? change5.src = "{{asset('website/assets/imgs/trust/img57.png')}}" :change5=null ;
                 } else {
                     logo.src = "{{asset('website/assets/imgs/logo2.svg')}}";
                     footer.src = "{{asset('website/assets/imgs/logo2.svg')}}";
                     whatsapp.src = "{{asset('website/assets/imgs/img7-2.png')}}";
                     linkedin.src = "{{asset('website/assets/imgs/img8-2.png')}}";
                     twitter.src = "{{asset('website/assets/imgs/img6-2.png')}}";
-                    listen.src = "{{asset('website/assets/imgs/img3-2.png')}}";
-                    listen2.src = "{{asset('website/assets/imgs/img4-2.png')}}";
+                   
+                    changeImageSource(listen, 'website/assets/imgs/img3-2.png');
+                    changeImageSource(listen2, 'website/assets/imgs/img4-2.png');
+                    changeImageSource(change1, 'website/assets/imgs/trust/img57-2.jpeg');
+                    changeImageSource(change2, 'website/assets/imgs/trust/img54-2.jpeg');
+                    changeImageSource(change3, 'website/assets/imgs/trust/img47-2.jpeg');
+                    changeImageSource(change4, 'website/assets/imgs/trust/img46-2.jpeg');
+                    // change5? change5.src = "{{asset('website/assets/imgs/trust/img57-2.jpeg')}}" : change5=null;                  
+                
                 }
             });
+            function changeImageSource(element, src) {
+                if (element) {
+                    element.src = `{{asset('${src}')}}`;
+                }
+            }
         });
     </script>
     

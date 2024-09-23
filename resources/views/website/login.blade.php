@@ -110,6 +110,12 @@
             .log {
                 height: 70vh;
             }
+            .login-text{
+                padding-top: 10px;
+            }
+            .sec-1{
+                height: 80vh;
+            }
         }
 
         @media(max-width:900px) {

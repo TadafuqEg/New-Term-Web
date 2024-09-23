@@ -111,18 +111,18 @@
             <img src="{{asset('website/assets/imgs/trust/img43.png')}}" loading="lazy" alt="Image 2">
             <img src="{{asset('website/assets/imgs/trust/img44.png')}}" loading="lazy" alt="Image 3">
             <img src="{{asset('website/assets/imgs/trust/img45.png')}}" loading="lazy" alt="Image 4">
-            <img src="{{asset('website/assets/imgs/trust/img46.png')}}" loading="lazy" alt="Image 5">
-            <img src="{{asset('website/assets/imgs/trust/img47.png')}}" loading="lazy" alt="Image 6">
+            <img src="{{asset('website/assets/imgs/trust/img46-2.jpeg')}}" loading="lazy" alt="Image 5"id="change-4">
+            <img src="{{asset('website/assets/imgs/trust/img47-2.jpeg')}}" loading="lazy" alt="Image 6"id="change-3">
             <img src="{{asset('website/assets/imgs/trust/img48.png')}}" loading="lazy" alt="Image 7">
             <img src="{{asset('website/assets/imgs/trust/img49.png')}}" loading="lazy" alt="Image 8">
             <img src="{{asset('website/assets/imgs/trust/img50.png')}}" loading="lazy" alt="Image 9">
             <img src="{{asset('website/assets/imgs/trust/img51.png')}}" loading="lazy" alt="Image 10">
             <img src="{{asset('website/assets/imgs/trust/img52.png')}}" loading="lazy" alt="Image 11">
             <img src="{{asset('website/assets/imgs/trust/img53.png')}}" loading="lazy" alt="Image 12">
-            <img src="{{asset('website/assets/imgs/trust/img54.png')}}" loading="lazy" alt="Image 13">
+            <img src="{{asset('website/assets/imgs/trust/img54-2.jpeg')}}" loading="lazy" alt="Image 13"id="change-2">
             <img src="{{asset('website/assets/imgs/trust/img55.png')}}" loading="lazy" alt="Image 14">
             <img src="{{asset('website/assets/imgs/trust/img56.png')}}" loading="lazy" alt="Image 15">
-            <img src="{{asset('website/assets/imgs/trust/img57.png')}}" loading="lazy" alt="Image 16">
+            <img src="{{asset('website/assets/imgs/trust/img57-2.jpeg')}}" loading="lazy" alt="Image 16" id="change-1">
             <img src="{{asset('website/assets/imgs/trust/img58.png')}}" loading="lazy" alt="Image 17">
             <img src="{{asset('website/assets/imgs/trust/img59.png')}}" loading="lazy" alt="Image 18">
             <img src="{{asset('website/assets/imgs/trust/img60.png')}}" loading="lazy" alt="Image 18">
@@ -132,5 +132,5 @@
 </div>
 @endsection
 @push('scripts')
-   
+
 @endpush
