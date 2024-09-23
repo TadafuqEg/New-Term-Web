@@ -205,7 +205,7 @@
 
                 if (body.classList.contains("dark")) {
                     logo.src = "{{asset('website/assets/imgs/logo.svg')}}";
-                    footer.src = "{{asset('website/assets/imgs/Logo.svg')}}";
+                    footer.src = "{{asset('website/assets/imgs/logo.svg')}}";
                     whatsapp.src = "{{asset('website/assets/imgs/img7.png')}}";
                     linkedin.src = "{{asset('website/assets/imgs/img8.png')}}";
                     twitter.src = "{{asset('website/assets/imgs/img6.png')}}";
@@ -213,7 +213,7 @@
                     listen2.src = "{{asset('website/assets/imgs/img4.png')}}";
                 } else {
                     logo.src = "{{asset('website/assets/imgs/logo2.svg')}}";
-                    footer.src = "{{asset('website/assets/imgs/Logo2.svg')}}";
+                    footer.src = "{{asset('website/assets/imgs/logo2.svg')}}";
                     whatsapp.src = "{{asset('website/assets/imgs/img7-2.png')}}";
                     linkedin.src = "{{asset('website/assets/imgs/img8-2.png')}}";
                     twitter.src = "{{asset('website/assets/imgs/img6-2.png')}}";

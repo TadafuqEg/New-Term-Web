@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Term-signup</title>
-    <link rel="icon" href="{{asset('website/assets/imgs/Logo2.svg')}}" style="transform: scale(.65);">
+    <link rel="icon" href="{{asset('website/assets/imgs/logo2.svg')}}" style="transform: scale(.65);">
     <link rel="stylesheet" href="{{asset('website/css/style.css')}}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
@@ -190,7 +190,7 @@
         <nav class="navbar">
             <div class="content content2">
                 <div class="logo">
-                    <a href="{{url('/')}}">><img id="logo-img" loading="lazy" src="{{asset('website/assets/imgs/Logo2.svg')}}" /></a>
+                    <a href="{{url('/')}}">><img id="logo-img" loading="lazy" src="{{asset('website/assets/imgs/logo2.svg')}}" /></a>
                 </div>
                 <ul class="menu-list"
                     style="background-color:transparent; border: none; text-align: right; justify-content: right;  width: 80%;">
@@ -281,7 +281,7 @@
         <div class="footer-content">
             <div class="footer-left">
                 <div class="left-top">
-                    <img id="footer-img" loading="lazy" src="{{asset('website/assets/imgs/Logo2.svg')}}" />
+                    <img id="footer-img" loading="lazy" src="{{asset('website/assets/imgs/logo2.svg')}}" />
                     <div class="footer-imgs">
                         <a href="#"><img id="footer-linkedin" loading="lazy" alt="" src="{{asset('website/assets/imgs/img8-2.png')}}" /></a>
                         <a href="#"><img id="footer-x" loading="lazy" alt="" src="{{asset('website/assets/imgs/img6-2.png')}}" /></a>
@@ -318,16 +318,16 @@
                 body.classList.toggle("dark");
 
                 if (body.classList.contains("dark")) {
-                    logo.src = "{{asset('website/assets/imgs/Logo.svg')}}";
-                    footer.src = "{{asset('website/assets/imgs/Logo.svg')}}";
+                    logo.src = "{{asset('website/assets/imgs/logo.svg')}}";
+                    footer.src = "{{asset('website/assets/imgs/logo.svg')}}";
                     whatsapp.src = "{{asset('website/assets/imgs/img7.png')}}";
                     linkedin.src = "{{asset('website/assets/imgs/img8.png')}}";
                     twitter.src = "{{asset('website/assets/imgs/img6.png')}}";
                     listen.src = "{{asset('website/assets/imgs/img3.png')}}";
                     listen2.src = "{{asset('website/assets/imgs/img4.png')}}";
                 } else {
-                    logo.src = "{{asset('website/assets/imgs/Logo2.svg')}}";
-                    footer.src = "{{asset('website/assets/imgs/Logo2.svg')}}";
+                    logo.src = "{{asset('website/assets/imgs/logo2.svg')}}";
+                    footer.src = "{{asset('website/assets/imgs/logo2.svg')}}";
                     whatsapp.src = "{{asset('website/assets/imgs/img7-2.png')}}";
                     linkedin.src = "{{asset('website/assets/imgs/img8-2.png')}}";
                     twitter.src = "{{asset('website/assets/imgs/img6-2.png')}}";
