@@ -190,7 +190,7 @@
         <nav class="navbar">
             <div class="content content2">
                 <div class="logo">
-                    <a href="{{url('/')}}">><img id="logo-img" loading="lazy" src="{{asset('website/assets/imgs/logo2.svg')}}" /></a>
+                    <a href="{{url('/')}}"><img id="logo-img" loading="lazy" src="{{asset('website/assets/imgs/logo2.svg')}}" /></a>
                 </div>
                 <ul class="menu-list"
                     style="background-color:transparent; border: none; text-align: right; justify-content: right;  width: 80%;">
