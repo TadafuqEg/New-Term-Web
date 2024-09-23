@@ -127,7 +127,7 @@
             <img src="{{asset('website/assets/imgs/trust/img59.png')}}" loading="lazy" alt="Image 18">
             <img src="{{asset('website/assets/imgs/trust/img60.png')}}" loading="lazy" alt="Image 18">
         </div>
-        <a href="{{url('/contact')}}"><button> Join the Legacy</button></a>
+        <a href="{{url('/contact')}}"><button>Join the Legacy</button></a>
     </div>
 </div>
 @endsection

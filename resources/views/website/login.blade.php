@@ -114,7 +114,7 @@
                 padding-top: 10px;
             }
             .sec-1{
-                height: 80vh;
+                height: 100vh;
             }
         }
 
