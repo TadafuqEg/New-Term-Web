@@ -101,6 +101,11 @@
             font-weight: 400;
             margin-bottom: 20px;
         }
+        @media(max-width:1550px){
+            .sec-1{
+                height: 100vh;
+            }
+        }
 
         @media(max-width:1300px) {
             .login-form {
@@ -113,9 +118,7 @@
             .login-text{
                 padding-top: 10px;
             }
-            .sec-1{
-                height: 100vh;
-            }
+            
         }
 
         @media(max-width:900px) {
