@@ -351,7 +351,7 @@
             <div class="item change-3"><img src="{{asset('website/assets/imgs/trust/img54-2.jpeg')}}" loading="lazy" alt="Image 13" id="change-2"></div>
             <div class="item"><img src="{{asset('website/assets/imgs/trust/img55.png')}}" loading="lazy" alt="Image 14"></div>
             <div class="item"><img src="{{asset('website/assets/imgs/trust/img56.png')}}" loading="lazy" alt="Image 15"></div>
-            <div class="item change-4"><img src="{{asset('website/assets/imgs/trust/img57-2.jpeg')}}" loading="lazy" alt="Image 16" id="change-1" class="change-1"></div>
+            <div class="item change-4"><img src="{{asset('website/assets/imgs/trust/img57-2.jpeg')}}" loading="lazy" alt="Image 16" id="change-1"></div>
             <div class="item"><img src="{{asset('website/assets/imgs/trust/img58.png')}}" loading="lazy" alt="Image 17"></div>
             <div class="item"><img src="{{asset('website/assets/imgs/trust/img59.png')}}" loading="lazy" alt="Image 18"></div>
             <div class="item"><img src="{{asset('website/assets/imgs/trust/img60.png')}}" loading="lazy" alt="Image 18"></div>
