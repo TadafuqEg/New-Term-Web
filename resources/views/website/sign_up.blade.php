@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Term-signup</title>
@@ -191,7 +191,7 @@
         <nav class="navbar">
             <div class="content content2">
                 <div class="logo">
-                    <a href="{{url('/')}}"><img id="logo-img" loading="lazy" src="{{asset('website/assets/imgs/logo2.svg')}}" /></a>
+                    <a href="{{url('/')}}"><img id="logo-img" alt="term-logo" loading="lazy" src="{{asset('website/assets/imgs/logo2.svg')}}" /></a>
                 </div>
                 <ul class="menu-list"
                     style="background-color:transparent; border: none; text-align: right; justify-content: right;  width: 80%;">
@@ -282,11 +282,11 @@
         <div class="footer-content">
             <div class="footer-left">
                 <div class="left-top">
-                    <img id="footer-img" loading="lazy" src="{{asset('website/assets/imgs/logo2.svg')}}" />
+                    <img id="footer-img" loading="lazy" alt="term-footer-img" src="{{asset('website/assets/imgs/logo2.svg')}}" />
                     <div class="footer-imgs">
-                        <a href="#"><img id="footer-linkedin" loading="lazy" alt="" src="{{asset('website/assets/imgs/img8-2.png')}}" /></a>
-                        <a href="#"><img id="footer-x" loading="lazy" alt="" src="{{asset('website/assets/imgs/img6-2.png')}}" /></a>
-                        <a href="#"><img id="footer-whatsapp" loading="lazy" alt="" src="{{asset('website/assets/imgs/img7-2.png')}}" /></a>
+                        <a href="#"><img id="footer-linkedin" loading="lazy" alt="term-linkedin" src="{{asset('website/assets/imgs/img8-2.png')}}" /></a>
+                        <a href="#"><img id="footer-x" loading="lazy" alt="term-x" src="{{asset('website/assets/imgs/img6-2.png')}}" /></a>
+                        <a href="#"><img id="footer-whatsapp" loading="lazy" alt="term-whatsapp" src="{{asset('website/assets/imgs/img7-2.png')}}" /></a>
                     </div>
                 </div>
                 <div class="left-bottom">
