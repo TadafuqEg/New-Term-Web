@@ -2515,8 +2515,9 @@ select::-ms-expand {
 
 @media(max-width:1295px) {
   .sec-1 {
-    height: 65vh;
+    height: 75vh;
     background-position: top;
+    
   }
 
   .special-cards {
