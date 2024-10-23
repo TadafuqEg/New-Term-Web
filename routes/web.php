@@ -81,4 +81,4 @@ Route::get('/executive_summary', function () {
 })->name('executive_summary');
 
 /////////////////////////////////////////////////
-Route::get('/sitemap.xml', [HomeController::class, 'sitemap'])->name('sitemap');
+Route::get('m/sitemap.xl', [HomeController::class, 'sitemap'])->name('sitemap');
