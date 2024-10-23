@@ -79,3 +79,6 @@ Route::get('/company_profile_compact', function () {
 Route::get('/executive_summary', function () {
     return response()->file(public_path('assets/TERM_Executive_Summary_2024.pdf'));
 })->name('executive_summary');
+
+/////////////////////////////////////////////////
+Route::get('/sitemap.xml', [HomeController::class, 'sitemap'])->name('sitemap');

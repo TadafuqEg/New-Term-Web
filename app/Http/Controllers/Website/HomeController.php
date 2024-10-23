@@ -11,7 +11,8 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SendOTP;
 use Illuminate\Support\Facades\Validator;
-
+use Spatie\Sitemap\Sitemap;
+use Spatie\Sitemap\Tags\Url;
 class HomeController extends ApiController
 {
       public function home(){
@@ -115,6 +116,53 @@ class HomeController extends ApiController
         return view('website.Industries.industries_fashion');
       }
       
-      
+      //////////////////////////////////////////////////////////////
+      public function sitemap()
+      {
+          $sitemap = Sitemap::create()
+              ->add(Url::create('/'))
+              ->add(Url::create('/about_us'))
+              ->add(Url::create('/success_stories'))
+              ->add(Url::create('/contact'))
+              ->add(Url::create('/reputation'))
+              ->add(Url::create('/competitive'))
+              ->add(Url::create('/marketing'))
+              ->add(Url::create('/risk'))
+              ->add(Url::create('/influencer'))
+              ->add(Url::create('/authenticity'))
+              ->add(Url::create('/amplification'))
+              ->add(Url::create('/reputation-mange'))
+              ->add(Url::create('/tactical'))
+              ->add(Url::create('/influnce-marketing'))
+              ->add(Url::create('/large-scale'))
+              ->add(Url::create('/contact-us'))
+              ->add(Url::create('/join-us'))
+              ->add(Url::create('/hoo_talk'))
+              ->add(Url::create('/mass'))
+              ->add(Url::create('/login'))
+              ->add(Url::create('/sign_up'))
+              ->add(Url::create('/markets-cryptocurrency'))
+              ->add(Url::create('/markets-banking-insurance'))
+              ->add(Url::create('/markets-education'))
+              ->add(Url::create('/markets-airlines'))
+              ->add(Url::create('/markets-mass-retail'))
+              ->add(Url::create('/markets-telco'))
+              ->add(Url::create('/markets-oil-gas'))
+              ->add(Url::create('/markets-theme-amusement-parks'))
+              ->add(Url::create('/markets-FMCG'))
+              ->add(Url::create('/markets-luxury'))
+              ->add(Url::create('/industries-ministries-departments'))
+              ->add(Url::create('/industries-fashion'))
+              ->add(Url::create('/emdad-products'))
+              ->add(Url::create('/company_profile'))
+              ->add(Url::create('/social_intelligence'))
+              ->add(Url::create('/reputation_management'))
+              ->add(Url::create('/company_profile_compact'))
+              ->add(Url::create('/executive_summary'))
+             
+              ->writeToFile(public_path('sitemap.xml'));
+
+          return response($sitemap)->header('Content-Type', 'text/xml');
+      }
 
 }
