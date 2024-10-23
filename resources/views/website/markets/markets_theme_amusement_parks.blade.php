@@ -52,7 +52,7 @@
             <h5 class="mark-h5">Theme /Amusement Parks</h5>
             <p>A leading amusement park sought to boost visitor engagement and optimize its marketing strategies.
             </p>
-            <a href="{{url('/contact')}}"><button class="crypt">Send Us Message</button></a>
+            <a href="{{url('/contact')}}"><button class="crypt" id="Send_Us_Message">Send Us Message</button></a>
         </div>
     </div>
     <div class="mark-content">
@@ -82,11 +82,29 @@
                     <li>Enhanced overall visitor experience and park operations.</li>
                 </ul>
             </div>
-            <a href="{{url('/contact')}}"><button class="crypt-2">Send Us Message</button></a>
+            <a href="{{url('/contact')}}"><button class="crypt-2" id="Send_Us_Message2">Send Us Message</button></a>
         </div>
     </div>
 </div>
 @endsection
 @push('scripts')
 <script src="{{asset('website/logic.js')}}"></script>
+<script>
+    document.getElementById('Send_Us_Message').addEventListener('click', function() {
+        window.dataLayer.push({
+        'event': 'buttonClick',
+        'buttonId': 'Send_Us_Message',
+        'buttonText': this.textContent
+        });
+    });
+    
+    document.getElementById('Send_Us_Message2').addEventListener('click', function() {
+        window.dataLayer.push({
+        'event': 'buttonClick',
+        'buttonId': 'Send_Us_Message2',
+        'buttonText': this.textContent
+        });
+    });
+    
+</script>
 @endpush

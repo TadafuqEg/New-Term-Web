@@ -52,7 +52,7 @@
             <h5 class="mark-h5">Banking / Insurance</h5>
             <p>A major bank aimed to optimize its marketing campaigns and improve competitive positioning in a
                 saturated market.</p>
-            <a href="{{url('/contact')}}"><button class="crypt">Work With Us</button></a>
+            <a href="{{url('/contact')}}"><button class="crypt"id="Work_With_Us">Work With Us</button></a>
         </div>
     </div>
     <div class="mark-content">
@@ -82,10 +82,28 @@
                     <li>Enhanced competitive positioning and strategic decision-making.</li>
                 </ul>
             </div>
-            <a href="{{url('/contact')}}"><button class="crypt-2">Work With Us</button></a>
+            <a href="{{url('/contact')}}"><button class="crypt-2" id="Work_With_Us2">Work With Us</button></a>
         </div>
     </div>
 @endsection
 @push('scripts')
 <script src="{{asset('website/logic.js')}}"></script>
+<script>
+    document.getElementById('Work_With_Us2').addEventListener('click', function() {
+        window.dataLayer.push({
+        'event': 'buttonClick',
+        'buttonId': 'Work_With_Us2',
+        'buttonText': this.textContent
+        });
+    });
+    
+    document.getElementById('Work_With_Us').addEventListener('click', function() {
+        window.dataLayer.push({
+        'event': 'buttonClick',
+        'buttonId': 'Work_With_Us',
+        'buttonText': this.textContent
+        });
+    });
+    
+</script>
 @endpush

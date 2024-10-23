@@ -11,7 +11,7 @@
             <p>The best way to manage a crisis is to prevent one. By recognizing and anticipating risks and crises,
                 we stabilize and ensure long time success for your business.
             </p>
-            <a href='{{url('/contact')}}'><button class="book-call">Contact Us</button></a>
+            <a href='{{url('/contact')}}'><button class="book-call" id="Contact_Us">Contact Us</button></a>
         </div>
     </div>
 
@@ -62,10 +62,25 @@
             ahead of the competition by understanding your audience, monitoring your brand's reputation, and
             identifying key influencers—all in one intuitive dashboard.
         </p>
-        <a href="{{url('/hoo_talk')}}"><button>Take Control Today!</button></a>
+        <a href="{{url('/hoo_talk')}}"><button id="Take_Control_Today_Go_To_Hoo_Talk">Take Control Today!</button></a>
     </div>
 </div>
 @endsection
 @push('scripts')
-   
+<script>
+    document.getElementById('Contact_Us').addEventListener('click', function() {
+        window.dataLayer.push({
+        'event': 'buttonClick',
+        'buttonId': 'Contact_Us',
+        'buttonText': this.textContent
+        });
+    });
+    document.getElementById('Take_Control_Today_Go_To_Hoo_Talk').addEventListener('click', function() {
+        window.dataLayer.push({
+        'event': 'buttonClick',
+        'buttonId': 'Take_Control_Today_Go_To_Hoo_Talk',
+        'buttonText': this.textContent
+        });
+    });
+</script>
 @endpush

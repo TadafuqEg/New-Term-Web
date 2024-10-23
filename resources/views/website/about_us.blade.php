@@ -16,7 +16,7 @@
                 management and trust as foundational to sustained success in today's interconnected business
                 landscape.
             </p>
-            <a href="{{url('/contact')}}"><button class="book-call">Contact Us</button></a>
+            <a href="{{url('/contact')}}"><button class="book-call" id="Contact_Us">Contact Us</button></a>
         </div>
     </div>
 
@@ -32,7 +32,7 @@
                 and
                 active WEBINT methods, resulting in a dynamic, real-time approach to data analysis.
             </p>
-            <a href="{{url('/contact')}}"><button>Discover What Sets Us Apart</button></a>
+            <a href="{{url('/contact')}}"><button id="Discover_What_Sets_Us_Apart">Discover What Sets Us Apart</button></a>
         </div>
         <div class="line"></div>
     </div>
@@ -49,7 +49,7 @@
                 inform strategic decisionmaking. It's this dynamic fusion that sets TDW apart, making it an
                 unrivaled offering in the global arena of digital intelligence and brand influence
             </p>
-            <a href="{{url('/contact')}}"><button>Join us and Turn Conversations into Opportunities</button></a>
+            <a href="{{url('/contact')}}"><button id="Join_us_and_Turn_Conversations_into_Opportunities">Join us and Turn Conversations into Opportunities</button></a>
         </div>
         <div class="line"></div>
     </div>
@@ -97,7 +97,7 @@
             meet but exceed our clients' expectations.
 
         </p>
-        <a href="{{url('/contact')}}"><button>Join Us on a Journey to Success</button></a>
+        <a href="{{url('/contact')}}"><button id="Join_Us_on_a_Journey_to_Success">Join Us on a Journey to Success</button></a>
     </div>
 
     <div class="about-partenrs">
@@ -127,10 +127,48 @@
             <img src="{{asset('website/assets/imgs/trust/img59.png')}}" loading="lazy" alt="Image 18">
             <img src="{{asset('website/assets/imgs/trust/img60.png')}}" loading="lazy" alt="Image 18">
         </div>
-        <a href="{{url('/contact')}}"><button>Join the Legacy</button></a>
+        <a href="{{url('/contact')}}"><button id="Join_the_Legacy">Join the Legacy</button></a>
     </div>
 </div>
 @endsection
 @push('scripts')
-
+<script>
+    document.getElementById('Contact_Us').addEventListener('click', function() {
+        window.dataLayer.push({
+        'event': 'buttonClick',
+        'buttonId': 'Contact_Us',
+        'buttonText': this.textContent
+        });
+    });
+    
+    document.getElementById('Discover_What_Sets_Us_Apart').addEventListener('click', function() {
+        window.dataLayer.push({
+        'event': 'buttonClick',
+        'buttonId': 'Discover_What_Sets_Us_Apart',
+        'buttonText': this.textContent
+        });
+    });
+    document.getElementById('Join_us_and_Turn_Conversations_into_Opportunities').addEventListener('click', function() {
+        window.dataLayer.push({
+        'event': 'buttonClick',
+        'buttonId': 'Join_us_and_Turn_Conversations_into_Opportunities',
+        'buttonText': this.textContent
+        });
+    });
+    document.getElementById('Join_Us_on_a_Journey_to_Success').addEventListener('click', function() {
+        window.dataLayer.push({
+        'event': 'buttonClick',
+        'buttonId': 'Join_Us_on_a_Journey_to_Success',
+        'buttonText': this.textContent
+        });
+    });
+    document.getElementById('Join_the_Legacy').addEventListener('click', function() {
+        window.dataLayer.push({
+        'event': 'buttonClick',
+        'buttonId': 'Join_the_Legacy',
+        'buttonText': this.textContent
+        });
+    });
+    
+</script>
 @endpush

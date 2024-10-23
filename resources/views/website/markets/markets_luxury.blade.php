@@ -53,7 +53,7 @@
             <p>A luxury watches brand aimed to strengthen its market position and manage its public image amidst
                 evolving market trends.
             </p>
-            <a href="{{url('/contact')}}"><button class="crypt">Contact Us</button></a>
+            <a href="{{url('/contact')}}"><button class="crypt" id="Contact_Us">Contact Us</button></a>
         </div>
     </div>
     <div class="mark-content">
@@ -83,11 +83,29 @@
                     <li>Increased engagement with target audiences and improved brand perception</li>
                 </ul>
             </div>
-            <a href="{{url('/contact')}}"><button class="crypt-2">Contact Us</button></a>
+            <a href="{{url('/contact')}}"><button class="crypt-2" id="Contact_Us2">Contact Us</button></a>
         </div>
     </div>
 </div>
 @endsection
 @push('scripts')
 <script src="{{asset('website/logic.js')}}"></script>
+<script>
+    document.getElementById('Contact_Us').addEventListener('click', function() {
+        window.dataLayer.push({
+        'event': 'buttonClick',
+        'buttonId': 'Contact_Us',
+        'buttonText': this.textContent
+        });
+    });
+    
+    document.getElementById('Contact_Us2').addEventListener('click', function() {
+        window.dataLayer.push({
+        'event': 'buttonClick',
+        'buttonId': 'Contact_Us2',
+        'buttonText': this.textContent
+        });
+    });
+    
+</script>
 @endpush

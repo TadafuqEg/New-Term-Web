@@ -15,7 +15,19 @@
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
             j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-W4D7RJ48');</script>
+            })(window,document,'script','dataLayer','GTM-W4D7RJ48');
+        </script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                'event': 'pageview',
+                'page': {
+                'url': window.location.href,
+                'title': document.title,
+                'category': 'blog'
+                }
+            });
+        </script>
     <style>
         .log-sign{
             background-image: url("{{asset('website/assets/imgs/login.gif')}}");
@@ -206,10 +218,10 @@
                     <div class="icon cancel-btn">
                         <i class="fas fa-times"></i>
                     </div>
-                    <a href="{{url('/login')}}" style='font-size: 14px; font-weight: 600; cursor: pointer; text-decoration: none; color:var(--color);'>Already have an account?</a>
+                    <a id="login2" href="{{url('/login')}}" style='font-size: 14px; font-weight: 600; cursor: pointer; text-decoration: none; color:var(--color);'>Already have an account?</a>
                 </ul>
                 <div class="navbar-login n-v2">
-                    <a href="{{url('/login')}}"><button class="login-btn">Login</button></a>
+                    <a href="{{url('/login')}}"><button class="login-btn" id="login">Login</button></a>
                     <svg stroke="currentColor" stroke-width="0" viewBox="0 0 16 16"
                         class="dark-toggle hidden md:block text-purple-700 mt-1 ml-2 cursor-pointer dark:text-white"
                         height="28" width="28" xmlns="http://www.w3.org/2000/svg">
@@ -237,7 +249,7 @@
                 <p>Register Your account</p>
             </div>
             <div class="login-form">
-                <form action="{{ route('register.submit') }}" method="POST">
+                <form action="{{ route('register.submit') }}" method="POST" id="MyForm">
                     @csrf
                     <div class="username name">
                         <label for="username">Name</label>
@@ -311,6 +323,29 @@
         </div>
     </div>
     <script src="{{asset('website/js/script.js')}}"></script>
+    <script>
+        document.getElementById('MyForm').addEventListener('submit', function() {
+            window.dataLayer.push({
+            'event': 'formSubmit',
+            'formId': 'Register_form',
+            'formName': 'Register Form'
+            });
+        });
+        document.getElementById('login').addEventListener('click', function() {
+            window.dataLayer.push({
+            'event': 'buttonClick',
+            'buttonId': 'login',
+            'buttonText': 'Login'
+            });
+        });
+        document.getElementById('login2').addEventListener('click', function() {
+            window.dataLayer.push({
+            'event': 'buttonClick',
+            'buttonId': 'login2',
+            'buttonText': 'Login'
+            });
+        });
+    </script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const toggle = document.querySelector(".dark-toggle");

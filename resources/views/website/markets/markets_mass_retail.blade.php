@@ -54,7 +54,7 @@
             <p>A major retail chain aimed to optimize its marketing strategies and address competitive challenges in
                 a dynamic market.
             </p>
-            <a href="{{url('/contact')}}"><button class="crypt">Let’s Chat</button></a>
+            <a href="{{url('/contact')}}"><button class="crypt" id="Let's_Chat">Let’s Chat</button></a>
         </div>
     </div>
     <div class="mark-content">
@@ -84,7 +84,7 @@
                     <li>Enhanced competitive positioning and strategic insights.</li>
                 </ul>
             </div>
-            <a href="{{url('/contact')}}"><button class="crypt-2">Let’s Chat</button></a>
+            <a href="{{url('/contact')}}"><button class="crypt-2" id="Let's_Chat2">Let’s Chat</button></a>
         </div>
     </div>
 
@@ -93,4 +93,22 @@
 @endsection
 @push('scripts')
 <script src="{{asset('website/logic.js')}}"></script>
+<script>
+    document.getElementById("Let's_Chat").addEventListener('click', function() {
+        window.dataLayer.push({
+        'event': 'buttonClick',
+        'buttonId': "Let's_Chat",
+        'buttonText': this.textContent
+        });
+    });
+    
+    document.getElementById("Let's_Chat2").addEventListener('click', function() {
+        window.dataLayer.push({
+        'event': 'buttonClick',
+        'buttonId': "Let's_Chat2",
+        'buttonText': this.textContent
+        });
+    });
+    
+</script>
 @endpush

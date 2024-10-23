@@ -55,7 +55,7 @@
             <p>A telecommunications provider sought to enhance its customer engagement and manage public perception
                 effectively
             </p>
-            <a href="{{url('/contact')}}"><button class="crypt">Be Unique With Us, Join Now</button></a>
+            <a href="{{url('/contact')}}"><button class="crypt"id="Be_Unique_With_Us">Be Unique With Us, Join Now</button></a>
         </div>
     </div>
     <div class="mark-content">
@@ -85,7 +85,7 @@
                     <li>Enhanced reputation and public perception.</li>
                 </ul>
             </div>
-            <a href="{{url('/contact')}}"><button class="crypt-2">Be Unique With Us, Join Now</button></a>
+            <a href="{{url('/contact')}}"><button class="crypt-2" id="Be_Unique_With_Us2">Be Unique With Us, Join Now</button></a>
         </div>
     </div>
 
@@ -94,4 +94,22 @@
 @endsection
 @push('scripts')
 <script src="{{asset('website/logic.js')}}"></script>
+<script>
+    document.getElementById('Be_Unique_With_Us').addEventListener('click', function() {
+        window.dataLayer.push({
+        'event': 'buttonClick',
+        'buttonId': 'Be_Unique_With_Us',
+        'buttonText': this.textContent
+        });
+    });
+    
+    document.getElementById('Be_Unique_With_Us2').addEventListener('click', function() {
+        window.dataLayer.push({
+        'event': 'buttonClick',
+        'buttonId': 'Be_Unique_With_Us2',
+        'buttonText': this.textContent
+        });
+    });
+    
+</script>
 @endpush

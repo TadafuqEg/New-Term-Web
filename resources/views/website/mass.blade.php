@@ -176,8 +176,7 @@
                 power of data to balance your marketing and media mix, ensuring every dollar is well spent for
                 maximum impact.
             </p>
-            <a href="https://mass-analytics.com/" target="blank"><button class="book-call">Elevate Your Strategy
-                    Today!</button></a>
+            <a href="https://mass-analytics.com/" target="blank"><button class="book-call" id="Elevate_Your_Strategy_Today_Go_To_Mass">Elevate Your Strategy Today!</button></a>
         </div>
     </div>
     <div class="hoo-content">
@@ -200,7 +199,7 @@
             </div>
             <p class="hoo-p">Transform your marketing efforts and achieve superior results with precision and
                 confidence.</p>
-            <a href="https://mass-analytics.com/" target="blank"><button>Start Optimizing Now</button></a>
+            <a href="https://mass-analytics.com/" target="blank"><button id="Start_Optimizing_Now_Go_To_Mass">Start Optimizing Now</button></a>
         </div>
 
     </div>
@@ -209,4 +208,20 @@
 </div>
 @endsection
 @push('scripts')
+<script>
+    document.getElementById('Elevate_Your_Strategy_Today_Go_To_Mass').addEventListener('click', function() {
+        window.dataLayer.push({
+        'event': 'buttonClick',
+        'buttonId': 'Elevate_Your_Strategy_Today_Go_To_Mass',
+        'buttonText': this.textContent
+        });
+    });
+    document.getElementById('Start_Optimizing_Now_Go_To_Mass').addEventListener('click', function() {
+        window.dataLayer.push({
+        'event': 'buttonClick',
+        'buttonId': 'Start_Optimizing_Now_Go_To_Mass',
+        'buttonText': this.textContent
+        });
+    });
+</script>
 @endpush

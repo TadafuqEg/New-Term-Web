@@ -136,7 +136,7 @@
                 clients
                 to make strategic decisions backed by comprehensive evidence
             </p>
-            <a href="{{url('/contact')}}"><button class="book-call">Book a Call</button></a>
+            <a href="{{url('/contact')}}"><button id="Book_Call" class="book-call">Book a Call</button></a>
         </div>
     </div>
 
@@ -160,7 +160,7 @@
         <div class="sec2-img card-right fadein">
             <h5>Read our case studies</h5>
             <p>Why we the trusted strategic insights partner for global brands and agencies</p>
-            <a href="{{url('/success_stories')}}"><button>Read Our Success Stories</button></a>
+            <a href="{{url('/success_stories')}}"><button id="Read_Our_Success_Stories">Read Our Success Stories</button></a>
         </div>
     </div>
 
@@ -223,7 +223,7 @@
                         marketing expertise to deliver exceptional results.
                     </p>
                 </div>
-                <a href="#getIn"><button>Get in Touch</button></a>
+                <a href="#getIn"><button id="Get_in_Touch">Get in Touch</button></a>
             </div>
         </div>
 
@@ -328,7 +328,7 @@
                     </div>
                 </div>
             </div>
-            <a href="#getIn"><button>Get in Touch</button></a>
+            <a href="#getIn"><button id="Get_in_Touch2">Get in Touch</button></a>
         </div>
 
     </div>
@@ -387,7 +387,38 @@
         });
     });
 </script>
-
+<script>
+    document.getElementById('Book_Call').addEventListener('click', function() {
+        window.dataLayer.push({
+        'event': 'buttonClick',
+        'buttonId': 'Book_Call',
+        'buttonText': this.textContent
+        });
+    });
+    
+    document.getElementById('Read_Our_Success_Stories').addEventListener('click', function() {
+        window.dataLayer.push({
+        'event': 'buttonClick',
+        'buttonId': 'Read_Our_Success_Stories',
+        'buttonText': this.textContent
+        });
+    });
+    document.getElementById('Get_in_Touch2').addEventListener('click', function() {
+        window.dataLayer.push({
+        'event': 'buttonClick',
+        'buttonId': 'Get_in_Touch',
+        'buttonText': this.textContent
+        });
+    });
+    document.getElementById('Get_in_Touch').addEventListener('click', function() {
+        window.dataLayer.push({
+        'event': 'buttonClick',
+        'buttonId': 'Get_in_Touch',
+        'buttonText': this.textContent
+        });
+    });
+    
+</script>
 
 
 @endpush

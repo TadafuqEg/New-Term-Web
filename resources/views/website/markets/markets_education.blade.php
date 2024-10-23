@@ -54,7 +54,7 @@
             <p>A well known University sought to anticipate potential risks and enhance its online presence to
                 attract more students.
             </p>
-            <a href="{{url('/contact')}}"><button class="crypt">Start With Us</button></a>
+            <a href="{{url('/contact')}}"><button class="crypt"id="Start_With_Us">Start With Us</button></a>
         </div>
     </div>
     <div class="mark-content">
@@ -84,7 +84,7 @@
                     <li>Increased student engagement and enrollment.</li>
                 </ul>
             </div>
-            <a href="{{url('/contact')}}"><button class="crypt-2">Start With Us</button></a>
+            <a href="{{url('/contact')}}"><button class="crypt-2" id="Start_With_Us2">Start With Us</button></a>
         </div>
     </div>
 
@@ -92,4 +92,22 @@
 @endsection
 @push('scripts')
 <script src="{{asset('website/logic.js')}}"></script>
+<script>
+    document.getElementById('Start_With_Us').addEventListener('click', function() {
+        window.dataLayer.push({
+        'event': 'buttonClick',
+        'buttonId': 'Start_With_Us',
+        'buttonText': this.textContent
+        });
+    });
+    
+    document.getElementById('Start_With_Us2').addEventListener('click', function() {
+        window.dataLayer.push({
+        'event': 'buttonClick',
+        'buttonId': 'Start_With_Us2',
+        'buttonText': this.textContent
+        });
+    });
+    
+</script>
 @endpush

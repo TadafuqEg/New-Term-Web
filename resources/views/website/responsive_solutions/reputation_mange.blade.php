@@ -11,7 +11,7 @@
             <p>We offer the necessary tools specialized in Reputation Management to help you safeguard your brand’s
                 image, address potential threats, and build a positive, lasting impression
             </p>
-            <a href='{{url('/contact')}}'><button class="book-call">Contact Us</button></a>
+            <a href='{{url('/contact')}}'><button class="book-call" id="Contact_Us">Contact Us</button></a>
         </div>
     </div>
 
@@ -62,10 +62,25 @@
             power of data to balance your marketing and media mix, ensuring every dollar is well spent for maximum
             impact.
         </p>
-        <a href="{{url('/mass')}}"><button>Elevate Your Strategy Today!</button></a>
+        <a href="{{url('/mass')}}"><button id="Elevate_Your_Strategy_Today_Go_To_Mass">Elevate Your Strategy Today!</button></a>
     </div>
 </div>
 @endsection
 @push('scripts')
-   
+<script>
+    document.getElementById('Contact_Us').addEventListener('click', function() {
+        window.dataLayer.push({
+        'event': 'buttonClick',
+        'buttonId': 'Contact_Us',
+        'buttonText': this.textContent
+        });
+    });
+    document.getElementById('Elevate_Your_Strategy_Today_Go_To_Mass').addEventListener('click', function() {
+        window.dataLayer.push({
+        'event': 'buttonClick',
+        'buttonId': 'Elevate_Your_Strategy_Today_Go_To_Mass',
+        'buttonText': this.textContent
+        });
+    });
+</script>
 @endpush

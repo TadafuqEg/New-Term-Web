@@ -52,7 +52,7 @@
             <h5 class="mark-h5">Oil & Gas</h5>
             <p>A major oil and gas company aimed to enhance its public image and manage regulatory
                 challenges effectively.</p>
-            <a href="{{url('/contact')}}"><button class="crypt">Let’s Talk</button></a>
+            <a href="{{url('/contact')}}"><button class="crypt" id="Let's_talk">Let’s Talk</button></a>
         </div>
     </div>
     <div class="mark-content">
@@ -83,11 +83,29 @@ initiatives.
                     <li>Enhanced reputation and stakeholder relations.</li>
                 </ul>
             </div>
-            <a href="{{url('/contact')}}"><button class="crypt-2">Let’s Talk</button></a>
+            <a href="{{url('/contact')}}"><button class="crypt-2" id="Let's_talk2">Let’s Talk</button></a>
         </div>
     </div>
 </div>
 @endsection
 @push('scripts')
 <script src="{{asset('website/logic.js')}}"></script>
+<script>
+    document.getElementById("Let's_Chat").addEventListener('click', function() {
+        window.dataLayer.push({
+        'event': 'buttonClick',
+        'buttonId': "Let's_talk",
+        'buttonText': this.textContent
+        });
+    });
+    
+    document.getElementById("Let's_Chat2").addEventListener('click', function() {
+        window.dataLayer.push({
+        'event': 'buttonClick',
+        'buttonId': "Let's_talk2",
+        'buttonText': this.textContent
+        });
+    });
+    
+</script>
 @endpush

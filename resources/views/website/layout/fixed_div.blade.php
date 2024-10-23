@@ -1,6 +1,6 @@
 <div class="fixxed">
     <div class="fixxed-buttons">
-        <a href="{{url('/login')}}"><img src="{{asset('website/assets/imgs/user.svg')}}" loading="lazy" /></a>
+        <a href="{{url('/login')}}" id="Login"><img src="{{asset('website/assets/imgs/user.svg')}}" loading="lazy" /></a>
         <a><img src="{{asset('website/assets/imgs/shopping.svg')}}" loading="lazy" /></a>
         <svg stroke="currentColor" stroke-width="0" viewBox="0 0 16 16"
             class="dark-toggle hidden md:block text-purple-700 mt-1 ml-2 cursor-pointer dark:text-white"

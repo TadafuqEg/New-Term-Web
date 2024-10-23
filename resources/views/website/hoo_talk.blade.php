@@ -170,7 +170,7 @@
                     Stay ahead of the competition by understanding your audience, monitoring your brand's reputation,
                     and identifying key influencers—all in one intuitive dashboard.
                 </p>
-                <a href="https://www.hoo-talk.com/" target="blank"><button class="book-call">Take Control Today!</button></a>
+                <a href="https://www.hoo-talk.com/" target="blank"><button class="book-call" id="Take_Control_Today_Go_To_Hoo_Talk">Take Control Today!</button></a>
             </div>
         </div>
 
@@ -194,7 +194,7 @@
                 </div>
                 <p class="hoo-p">Don't miss out on the opportunity to elevate your brand and make data-driven decisions
                     with confidence.</p>
-                <a href="https://www.hoo-talk.com/"target="blank"><button>Get Started Now</button></a>
+                <a href="https://www.hoo-talk.com/"target="blank"><button id="Get_Started_Now_Go_To_Hoo_Talk">Get Started Now</button></a>
             </div>
 
         </div>
@@ -206,4 +206,20 @@
 </div>
 @endsection
 @push('scripts')
+<script>
+    document.getElementById('Take_Control_Today_Go_To_Hoo_Talk').addEventListener('click', function() {
+        window.dataLayer.push({
+        'event': 'buttonClick',
+        'buttonId': 'Take_Control_Today_Go_To_Hoo_Talk',
+        'buttonText': this.textContent
+        });
+    });
+    document.getElementById('Get_Started_Now_Go_To_Hoo_Talk').addEventListener('click', function() {
+        window.dataLayer.push({
+        'event': 'buttonClick',
+        'buttonId': 'Get_Started_Now_Go_To_Hoo_Talk',
+        'buttonText': this.textContent
+        });
+    });
+</script>
 @endpush

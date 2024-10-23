@@ -37,7 +37,7 @@
             <h5 class="mark-h5">Ministries / Departments</h5>
             <p>A government ministry aimed to improve public communication and manage public sentiment effectively
             </p>
-            <a href="{{url('/contact')}}"><button class="crypt">Talk to us</button></a>
+            <a href="{{url('/contact')}}"><button class="crypt" id="Talk_to_us">Talk to us</button></a>
         </div>
     </div>
     <div class="mark-content">
@@ -67,11 +67,29 @@
                     <li>Enhanced engagement and public perception of the ministry.</li>
                 </ul>
             </div>
-            <a href="{{url('/contact')}}"><button class="crypt-2">Talk to us</button></a>
+            <a href="{{url('/contact')}}"><button class="crypt-2" id="Talk_to_us2">Talk to us</button></a>
         </div>
     </div>
 </div>
 @endsection
 @push('scripts')
 <script src="{{asset('website/logic.js')}}"></script>
+<script>
+    document.getElementById('Talk_to_us').addEventListener('click', function() {
+        window.dataLayer.push({
+        'event': 'buttonClick',
+        'buttonId': 'Talk_to_us',
+        'buttonText': this.textContent
+        });
+    });
+    
+    document.getElementById('Talk_to_us2').addEventListener('click', function() {
+        window.dataLayer.push({
+        'event': 'buttonClick',
+        'buttonId': 'Talk_to_us2',
+        'buttonText': this.textContent
+        });
+    });
+    
+</script>
 @endpush

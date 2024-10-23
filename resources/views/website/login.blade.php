@@ -14,7 +14,19 @@
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
             j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-W4D7RJ48');</script>
+            })(window,document,'script','dataLayer','GTM-W4D7RJ48');
+        </script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                'event': 'pageview',
+                'page': {
+                'url': window.location.href,
+                'title': document.title,
+                'category': 'blog'
+                }
+            });
+        </script>
     <style>
         .log-sign{
             background-image: url("{{asset('website/assets/imgs/login.gif')}}");
@@ -214,11 +226,11 @@
                     <div class="icon cancel-btn">
                         <i class="fas fa-times"></i>
                     </div>
-                    <a href="{{url('/sign_up')}}" style='font-size: 14px; font-weight: 600; cursor: pointer; text-decoration: none; color:var(--color);'>Don’t
+                    <a id="Sign_Up2" href="{{url('/sign_up')}}" style='font-size: 14px; font-weight: 600; cursor: pointer; text-decoration: none; color:var(--color);'>Don’t
                         you have an account?</a>
                 </ul>
                 <div class="navbar-login n-v2">
-                    <a href="{{url('/sign_up')}}"><button class="login-btn">Sign Up</button></a>
+                    <a href="{{url('/sign_up')}}"><button class="login-btn" id="Sign_Up">Sign Up</button></a>
                     <svg stroke="currentColor" stroke-width="0" viewBox="0 0 16 16"
                         class="dark-toggle hidden md:block text-purple-700 mt-1 ml-2 cursor-pointer dark:text-white"
                         height="28" width="28" xmlns="http://www.w3.org/2000/svg">
@@ -251,7 +263,7 @@
                         <p class="alert alert-danger"id="alert" role="alert" style="padding-top:5px;padding-bottom:5px; padding-left: 10px; background-color:brown;border-radius: 20px; color:beige;">{{ $errors->first('error') }}</p>
                     @endif
                 @endif
-                <form action="{{ route('login.submit') }}" method="POST">
+                <form action="{{ route('login.submit') }}" method="POST" id="myForm">
                     @csrf
                     <div class="username">
                         <label for="username">Username</label>
@@ -302,6 +314,29 @@
         </div>
     </div>
     <script src="{{asset('website/js/script.js')}}"></script>
+    <script>
+        document.getElementById('myForm').addEventListener('submit', function() {
+            window.dataLayer.push({
+            'event': 'formSubmit',
+            'formId': 'Login_form',
+            'formName': 'Login Form'
+            });
+        });
+        document.getElementById('Sign_Up').addEventListener('click', function() {
+            window.dataLayer.push({
+            'event': 'buttonClick',
+            'buttonId': 'Sign_Up',
+            'buttonText': 'Sign Up'
+            });
+        });
+        document.getElementById('Sign_Up2').addEventListener('click', function() {
+            window.dataLayer.push({
+            'event': 'buttonClick',
+            'buttonId': 'Sign_Up2',
+            'buttonText': 'Sign Up'
+            });
+        });
+    </script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const toggle = document.querySelector(".dark-toggle");

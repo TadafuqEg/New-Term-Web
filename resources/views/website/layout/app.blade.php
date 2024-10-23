@@ -28,7 +28,19 @@
         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
         j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-W4D7RJ48');</script>
+        })(window,document,'script','dataLayer','GTM-W4D7RJ48');
+    </script>
+   <script>
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            'event': 'pageview',
+            'page': {
+            'url': window.location.href,
+            'title': document.title,
+            'category': 'blog'
+            }
+        });
+    </script>
         <style>
             .popup {
                 position: fixed;
@@ -92,7 +104,23 @@
     
     <script src="{{asset('website/js/script.js')}}"></script>
     @stack('scripts')
-   
+   <script>
+    
+    document.getElementById('Contact_us').addEventListener('click', function() {
+        window.dataLayer.push({
+        'event': 'buttonClick',
+        'buttonId': 'Contact_us',
+        'buttonText': 'Contact Us'
+        });
+    });
+    document.getElementById('Login').addEventListener('click', function() {
+        window.dataLayer.push({
+        'event': 'buttonClick',
+        'buttonId': 'Login',
+        'buttonText': 'Login'
+        });
+    });
+   </script>
     <script>
         $(document).ready(function() {
            $('#contact-form-container2').on('submit', function(event) {
@@ -121,6 +149,11 @@
                     // Handle the success response here
                     // console.log(response);
                     //showPopup('Success! Form submitted successfully.');
+                    window.dataLayer.push({
+                        'event': 'formSubmit',
+                        'formId': 'Get_in_Touch',
+                        'formName': 'Get in Touch'
+                    });
                     let myPopup = $('#myPopup');
                     myPopup.addClass("show");
                     $('#contact-form-container2')[0].reset();

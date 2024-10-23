@@ -53,7 +53,7 @@
             <p>A major FMCG company aimed to refine its marketing strategies and understand consumer preferences
                 more deeply.
             </p>
-            <a href="{{url('/contact')}}"><button class="crypt">Talk to our experts</button></a>
+            <a href="{{url('/contact')}}"><button class="crypt" id="Talk_to_our_experts">Talk to our experts</button></a>
         </div>
     </div>
     <div class="mark-content">
@@ -83,11 +83,29 @@
                     <li>Increased brand loyalty and sales performance.</li>
                 </ul>
             </div>
-            <a href="{{url('/contact')}}"><button class="crypt-2">Talk to our experts</button></a>
+            <a href="{{url('/contact')}}"><button class="crypt-2" id="Talk_to_our_experts2">Talk to our experts</button></a>
         </div>
     </div>
 </div>
 @endsection
 @push('scripts')
 <script src="{{asset('website/logic.js')}}"></script>
+<script>
+    document.getElementById('Talk_to_our_experts').addEventListener('click', function() {
+        window.dataLayer.push({
+        'event': 'buttonClick',
+        'buttonId': 'Talk_to_our_experts',
+        'buttonText': this.textContent
+        });
+    });
+    
+    document.getElementById('Talk_to_our_experts2').addEventListener('click', function() {
+        window.dataLayer.push({
+        'event': 'buttonClick',
+        'buttonId': 'Talk_to_our_experts2',
+        'buttonText': this.textContent
+        });
+    });
+    
+</script>
 @endpush

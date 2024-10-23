@@ -38,7 +38,7 @@
             <h5 class="mark-h5">Fashion</h5>
             <p>A leading fashion brand aimed to bolster its market presence and address issues of authenticity and
                 brand perception.</p>
-            <a href="{{url('/contact')}}"><button class="crypt">Connect With Us</button></a>
+            <a href="{{url('/contact')}}"><button class="crypt" id="Connect_With_Us">Connect With Us</button></a>
         </div>
     </div>
     <div class="mark-content">
@@ -66,11 +66,29 @@
                     <li>Increased market visibility and engagement with target audiences.</li>
                 </ul>
             </div>
-            <a href="{{url('/contact')}}"><button class="crypt-2">Connect With Us</button></a>
+            <a href="{{url('/contact')}}"><button class="crypt-2"id="Connect_With_Us2">Connect With Us</button></a>
         </div>
     </div>
 </div>
 @endsection
 @push('scripts')
 <script src="{{asset('website/logic.js')}}"></script>
+<script>
+    document.getElementById('Connect_With_Us').addEventListener('click', function() {
+        window.dataLayer.push({
+        'event': 'buttonClick',
+        'buttonId': 'Connect_With_Us',
+        'buttonText': this.textContent
+        });
+    });
+    
+    document.getElementById('Connect_With_Us2').addEventListener('click', function() {
+        window.dataLayer.push({
+        'event': 'buttonClick',
+        'buttonId': 'Connect_With_Us2',
+        'buttonText': this.textContent
+        });
+    });
+    
+</script>
 @endpush
