@@ -102,8 +102,8 @@ Route::group(['middleware' => ['admin'], 'prefix' => 'admin-dashboard'], functio
     Route::get('/logout', [AdminAuthController::class, 'logout'])->name('logout');
    
         Route::any('/users', [UserController::class, 'index'])->name('users'); 
-        // Route::get('/users/create', [UserController::class, 'create'])->name('add.user');
-        // Route::post('/users/create', [UserController::class, 'store'])->name('create.user');
+        Route::get('/users/create', [UserController::class, 'create'])->name('add.user');
+        Route::post('/users/create', [UserController::class, 'store'])->name('create.user');
         Route::get('/user/edit/{id}', [UserController::class, 'edit'])->name('edit.user');
         Route::post('/user/update/{id}', [UserController::class, 'update'])->name('update.user');
         Route::get('/user/delete/{id}', [UserController::class, 'delete'])->name('delete.user');
