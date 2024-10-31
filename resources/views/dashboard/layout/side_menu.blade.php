@@ -14,12 +14,12 @@
       </li>
       <li>
         <a href="{{url('/admin-dashboard/users')}}">
-          <i class="zmdi zmdi-view-dashboard"></i> <span>Employees</span>
+          <i class="zmdi zmdi-view-dashboard"></i> <span>Clients</span>
         </a>
       </li>
       <li>
-        <a href="{{url('/admin-dashboard/attendance')}}">
-          <i class="zmdi zmdi-view-dashboard"></i> <span>Attendance</span>
+        <a href="{{url('/admin-dashboard/contact_us')}}">
+          <i class="zmdi zmdi-view-dashboard"></i> <span>Contact Us</span>
         </a>
       </li>
       
