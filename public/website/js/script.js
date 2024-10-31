@@ -33,7 +33,7 @@ window.onscroll = () => {
 
 // send email
 function sendEmail() {
-    var mailtoLink = `mailto:info@term.com`;
+    var mailtoLink = `mailto:info@term.qa`;
 
     window.location.href = mailtoLink;
 }

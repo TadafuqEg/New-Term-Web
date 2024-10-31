@@ -20,15 +20,15 @@
             <div class="left-content">
                 <div class="location">
                     <img loading="lazy" alt="" src="{{asset('website/assets/imgs/img28.png')}}" style="width: 23px; height: 28px;"/>
-                    <p>Office 2210 Concord Tower, Dubai<br />Media City, Dubai, UAE</p>
+                    <p>Doha-Qatar</p>
                 </div>
                 <div class="phone">
                     <img loading="lazy" alt="" src="{{asset('website/assets/imgs/img29.png')}}" />
-                    <p><a>+971 50 583 5963</a></p>
+                    <p><a>+97450531710</a></p>
                 </div>
                 <div class="email">
                     <img loading="lazy" alt="" src="{{asset('website/assets/imgs/img30.png')}}" />
-                    <p><a onclick="sendEmail()">info@term.ae</a></p>
+                    <p><a onclick="sendEmail()">info@term.qa</a></p>
                 </div>
             </div>
         </div>
