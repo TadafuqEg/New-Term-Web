@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Website\HomeController;
 use App\Http\Controllers\Website\AuthController;
+use App\Http\Controllers\Dashboard\UserController;
+use App\Http\Controllers\Dashboard\AdminAuthController;
+use App\Http\Controllers\Dashboard\ContactUsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -82,3 +85,30 @@ Route::get('/executive_summary', function () {
 
 /////////////////////////////////////////////////
 Route::get('m/sitemap.xl', [HomeController::class, 'sitemap'])->name('sitemap');
+
+////////////////////////////////////////////////////////////////////////////
+Route::get('/admin-dashboard/login', [AdminAuthController::class, 'login_view'])->name('login.view');
+Route::post('/admin-dashboard/login', [AdminAuthController::class, 'login'])->name('login');
+Route::get('/admin-dashboard', function () {
+    
+    if(!auth()->user()){
+        return redirect('/admin-dashboard/login');
+    }else{
+        return redirect('/admin-dashboard/home');
+    }
+});
+Route::group(['middleware' => ['admin'], 'prefix' => 'admin-dashboard'], function () {
+    Route::get('/home', [AdminAuthController::class, 'home'])->name('home');
+    Route::get('/logout', [AdminAuthController::class, 'logout'])->name('logout');
+   
+        Route::any('/users', [UserController::class, 'index'])->name('users'); 
+        // Route::get('/users/create', [UserController::class, 'create'])->name('add.user');
+        // Route::post('/users/create', [UserController::class, 'store'])->name('create.user');
+        Route::get('/user/edit/{id}', [UserController::class, 'edit'])->name('edit.user');
+        Route::post('/user/update/{id}', [UserController::class, 'update'])->name('update.user');
+        Route::get('/user/delete/{id}', [UserController::class, 'delete'])->name('delete.user');
+        ///////////////////////////////////////////////
+        Route::any('/contact_us', [ContactUsController::class, 'index'])->name('contact_us'); 
+        Route::get('/contact_us/view/{id}', [ContactUsController::class, 'view'])->name('edit.contact_us');
+        Route::post('/contact_us/update/{id}', [ContactUsController::class, 'update'])->name('update.contact_us');
+});
