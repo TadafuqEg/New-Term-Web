@@ -89,21 +89,7 @@
 @push('scripts')
 <script src="{{asset('website/logic.js')}}"></script>
 <script>
-    document.getElementById('Work_With_Us2').addEventListener('click', function() {
-        window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': 'Work_With_Us2',
-        'buttonText': this.textContent
-        });
-    });
     
-    document.getElementById('Work_With_Us').addEventListener('click', function() {
-        window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': 'Work_With_Us',
-        'buttonText': this.textContent
-        });
-    });
     
 </script>
 @endpush

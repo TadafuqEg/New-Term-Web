@@ -75,21 +75,7 @@
 @push('scripts')
 <script src="{{asset('website/logic.js')}}"></script>
 <script>
-    document.getElementById('Talk_to_us').addEventListener('click', function() {
-        window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': 'Talk_to_us',
-        'buttonText': this.textContent
-        });
-    });
-    
-    document.getElementById('Talk_to_us2').addEventListener('click', function() {
-        window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': 'Talk_to_us2',
-        'buttonText': this.textContent
-        });
-    });
+   
     
 </script>
 @endpush

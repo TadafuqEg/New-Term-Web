@@ -12,17 +12,7 @@
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
         
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            window.dataLayer.push({
-                'event': 'pageview',
-                'page': {
-                'url': window.location.href,
-                'title': document.title,
-                'category': 'blog'
-                }
-            });
-        </script>
+        
     <style>
         .log-sign{
             background-image: url("{{asset('website/assets/imgs/login.gif')}}");
@@ -318,27 +308,7 @@
     </div>
     <script src="{{asset('website/js/script.js')}}"></script>
     <script>
-        document.getElementById('MyForm').addEventListener('submit', function() {
-            window.dataLayer.push({
-            'event': 'formSubmit',
-            'formId': 'Register_form',
-            'formName': 'Register Form'
-            });
-        });
-        document.getElementById('login').addEventListener('click', function() {
-            window.dataLayer.push({
-            'event': 'buttonClick',
-            'buttonId': 'login',
-            'buttonText': 'Login'
-            });
-        });
-        document.getElementById('login2').addEventListener('click', function() {
-            window.dataLayer.push({
-            'event': 'buttonClick',
-            'buttonId': 'login2',
-            'buttonText': 'Login'
-            });
-        });
+       
     </script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {

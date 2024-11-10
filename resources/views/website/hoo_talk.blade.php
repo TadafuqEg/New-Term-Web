@@ -207,19 +207,6 @@
 @endsection
 @push('scripts')
 <script>
-    document.getElementById('Take_Control_Today_Go_To_Hoo_Talk').addEventListener('click', function() {
-        window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': 'Take_Control_Today_Go_To_Hoo_Talk',
-        'buttonText': this.textContent
-        });
-    });
-    document.getElementById('Get_Started_Now_Go_To_Hoo_Talk').addEventListener('click', function() {
-        window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': 'Get_Started_Now_Go_To_Hoo_Talk',
-        'buttonText': this.textContent
-        });
-    });
+   
 </script>
 @endpush

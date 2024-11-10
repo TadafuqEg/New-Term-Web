@@ -74,21 +74,7 @@
 @push('scripts')
 <script src="{{asset('website/logic.js')}}"></script>
 <script>
-    document.getElementById('Connect_With_Us').addEventListener('click', function() {
-        window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': 'Connect_With_Us',
-        'buttonText': this.textContent
-        });
-    });
-    
-    document.getElementById('Connect_With_Us2').addEventListener('click', function() {
-        window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': 'Connect_With_Us2',
-        'buttonText': this.textContent
-        });
-    });
+   
     
 </script>
 @endpush

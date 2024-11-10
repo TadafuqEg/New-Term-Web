@@ -68,19 +68,6 @@
 @endsection
 @push('scripts')
 <script>
-    document.getElementById('Contact_Us').addEventListener('click', function() {
-        window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': 'Contact_Us',
-        'buttonText': this.textContent
-        });
-    });
-    document.getElementById('Elevate_Your_Strategy_Today_Go_To_Mass').addEventListener('click', function() {
-        window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': 'Elevate_Your_Strategy_Today_Go_To_Mass',
-        'buttonText': this.textContent
-        });
-    });
+   
 </script>
 @endpush

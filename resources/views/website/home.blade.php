@@ -387,38 +387,7 @@
         });
     });
 </script>
-<script>
-    document.getElementById('Book_Call').addEventListener('click', function() {
-        window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': 'Book_Call',
-        'buttonText': this.textContent
-        });
-    });
-    
-    document.getElementById('Read_Our_Success_Stories').addEventListener('click', function() {
-        window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': 'Read_Our_Success_Stories',
-        'buttonText': this.textContent
-        });
-    });
-    document.getElementById('Get_in_Touch2').addEventListener('click', function() {
-        window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': 'Get_in_Touch',
-        'buttonText': this.textContent
-        });
-    });
-    document.getElementById('Get_in_Touch').addEventListener('click', function() {
-        window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': 'Get_in_Touch',
-        'buttonText': this.textContent
-        });
-    });
-    
-</script>
+
 
 
 @endpush

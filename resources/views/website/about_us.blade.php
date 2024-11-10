@@ -133,42 +133,6 @@
 @endsection
 @push('scripts')
 <script>
-    document.getElementById('Contact_Us').addEventListener('click', function() {
-        window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': 'Contact_Us',
-        'buttonText': this.textContent
-        });
-    });
-    
-    document.getElementById('Discover_What_Sets_Us_Apart').addEventListener('click', function() {
-        window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': 'Discover_What_Sets_Us_Apart',
-        'buttonText': this.textContent
-        });
-    });
-    document.getElementById('Join_us_and_Turn_Conversations_into_Opportunities').addEventListener('click', function() {
-        window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': 'Join_us_and_Turn_Conversations_into_Opportunities',
-        'buttonText': this.textContent
-        });
-    });
-    document.getElementById('Join_Us_on_a_Journey_to_Success').addEventListener('click', function() {
-        window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': 'Join_Us_on_a_Journey_to_Success',
-        'buttonText': this.textContent
-        });
-    });
-    document.getElementById('Join_the_Legacy').addEventListener('click', function() {
-        window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': 'Join_the_Legacy',
-        'buttonText': this.textContent
-        });
-    });
-    
+   
 </script>
 @endpush

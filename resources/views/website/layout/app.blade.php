@@ -25,17 +25,7 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     
-   <script>
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
-            'event': 'pageview',
-            'page': {
-            'url': window.location.href,
-            'title': document.title,
-            'category': 'blog'
-            }
-        });
-    </script>
+   
         <style>
             .popup {
                 position: fixed;
@@ -100,20 +90,7 @@
     @stack('scripts')
    <script>
     
-    document.getElementById('Contact_us').addEventListener('click', function() {
-        window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': 'Contact_us',
-        'buttonText': 'Contact Us'
-        });
-    });
-    document.getElementById('Login').addEventListener('click', function() {
-        window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': 'Login',
-        'buttonText': 'Login'
-        });
-    });
+   
    </script>
     <script>
         $(document).ready(function() {
@@ -143,11 +120,7 @@
                     // Handle the success response here
                     // console.log(response);
                     //showPopup('Success! Form submitted successfully.');
-                    window.dataLayer.push({
-                        'event': 'formSubmit',
-                        'formId': 'Get_in_Touch',
-                        'formName': 'Get in Touch'
-                    });
+                   
                     let myPopup = $('#myPopup');
                     myPopup.addClass("show");
                     $('#contact-form-container2')[0].reset();

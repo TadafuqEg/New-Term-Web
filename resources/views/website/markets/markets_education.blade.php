@@ -93,21 +93,7 @@
 @push('scripts')
 <script src="{{asset('website/logic.js')}}"></script>
 <script>
-    document.getElementById('Start_With_Us').addEventListener('click', function() {
-        window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': 'Start_With_Us',
-        'buttonText': this.textContent
-        });
-    });
-    
-    document.getElementById('Start_With_Us2').addEventListener('click', function() {
-        window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': 'Start_With_Us2',
-        'buttonText': this.textContent
-        });
-    });
+   
     
 </script>
 @endpush

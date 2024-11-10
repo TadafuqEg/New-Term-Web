@@ -90,21 +90,7 @@
 @push('scripts')
 <script src="{{asset('website/logic.js')}}"></script>
 <script>
-    document.getElementById('Send_Us_Message').addEventListener('click', function() {
-        window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': 'Send_Us_Message',
-        'buttonText': this.textContent
-        });
-    });
-    
-    document.getElementById('Send_Us_Message2').addEventListener('click', function() {
-        window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': 'Send_Us_Message2',
-        'buttonText': this.textContent
-        });
-    });
+   
     
 </script>
 @endpush

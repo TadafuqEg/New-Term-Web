@@ -98,11 +98,7 @@
                     // Handle the success response here
                     // console.log(response);
                     //showPopup('Success! Form submitted successfully.');
-                    window.dataLayer.push({
-                        'event': 'formSubmit',
-                        'formId': 'Contact_Us',
-                        'formName': 'Contact Us'
-                    });
+                   
                     let myPopup = $('#myPopup');
                     myPopup.addClass("show");
                     $('#contact-form-container')[0].reset();

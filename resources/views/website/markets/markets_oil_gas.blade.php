@@ -91,21 +91,7 @@ initiatives.
 @push('scripts')
 <script src="{{asset('website/logic.js')}}"></script>
 <script>
-    document.getElementById("Let's_Chat").addEventListener('click', function() {
-        window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': "Let's_talk",
-        'buttonText': this.textContent
-        });
-    });
     
-    document.getElementById("Let's_Chat2").addEventListener('click', function() {
-        window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': "Let's_talk2",
-        'buttonText': this.textContent
-        });
-    });
     
 </script>
 @endpush
