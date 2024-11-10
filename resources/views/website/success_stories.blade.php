@@ -86,89 +86,35 @@
 </div>
 @endsection
 @push('scripts')
+
 <script>
-    document.getElementById('Cryptocurrency').addEventListener('click', function() {
+    // Wait until the page is fully loaded
+    
+    document.addEventListener("DOMContentLoaded", function() {
         window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': 'Cryptocurrency',
-        'buttonText': 'Cryptocurrency'
+            'event': 'pageview',
+            'page': {
+                'url': window.location.href,
+                'title': document.title,
+                'category': 'Success Stories'
+            }
         });
-    });
-    document.getElementById('Fashion').addEventListener('click', function() {
-        window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': 'Fashion',
-        'buttonText': 'Fashion'
-        });
-    });
-    document.getElementById('Ministries-Departments').addEventListener('click', function() {
-        window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': 'Ministries-Departments',
-        'buttonText': 'Ministries / Departments'
-        });
-    });
-    document.getElementById('Luxury').addEventListener('click', function() {
-        window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': 'Luxury',
-        'buttonText': 'Luxury'
-        });
-    });
-    document.getElementById('FMCG').addEventListener('click', function() {
-        window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': 'FMCG',
-        'buttonText': 'FMCG'
-        });
-    });
-    document.getElementById('Theme-Amusement Parks').addEventListener('click', function() {
-        window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': 'Theme-Amusement Parks',
-        'buttonText': 'Theme / Amusement Parks'
-        });
-    });
-    document.getElementById('Oil-Gas').addEventListener('click', function() {
-        window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': 'Oil-Gas',
-        'buttonText': 'Oil & Gas'
-        });
-    });
-    document.getElementById('Telco').addEventListener('click', function() {
-        window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': 'Telco',
-        'buttonText': 'Telco'
-        });
-    });
-    document.getElementById('Mass-Retail').addEventListener('click', function() {
-        window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': 'Mass-Retail',
-        'buttonText': 'Mass Retail'
-        });
-    });
-    document.getElementById('Airlines').addEventListener('click', function() {
-        window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': 'Airlines',
-        'buttonText': 'Airlines'
-        });
-    });
-    document.getElementById('Education').addEventListener('click', function() {
-        window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': 'Education',
-        'buttonText': 'Education'
-        });
-    });
-    document.getElementById('Banking-Insurance').addEventListener('click', function() {
-        window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': 'Banking-Insurance',
-        'buttonText': 'Banking / Insurance'
+        // Select all monitoring cards
+        const monitoringCards = document.querySelectorAll(".monitoring-card");
+
+        // Add a click event listener to each card
+        monitoringCards.forEach(card => {
+            card.addEventListener("click", function(event) {
+
+                // Push data to the dataLayer
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({
+                    'event': 'cardClick',
+                    'cardCategory': event.currentTarget.id,
+                    'cardName': event.currentTarget.innerText.trim(),
+                    'cardURL': event.currentTarget.href
+                });
+            });
         });
     });
 </script>

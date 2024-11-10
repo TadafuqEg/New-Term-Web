@@ -90,21 +90,32 @@
 @push('scripts')
 <script src="{{asset('website/logic.js')}}"></script>
 <script>
-    document.getElementById('Send_Us_Message').addEventListener('click', function() {
+    document.addEventListener("DOMContentLoaded", function() {
         window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': 'Send_Us_Message',
-        'buttonText': this.textContent
+            'event': 'pageview',
+            'page': {
+                'url': window.location.href,
+                'title': document.title,
+                'category': 'Theme / Amusement Park'
+            }
+        });
+    // Select "Talk to our experts" buttons to track
+    const talkToExpertsButtons = document.querySelectorAll("#Send_Us_Message, #Send_Us_Message2");
+
+    // Add event listener for each "Talk to our experts" button
+    talkToExpertsButtons.forEach(function(button) {
+        button.addEventListener("click", function() {
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                'event': 'buttonClick',
+                'buttonId': button.id,
+                'buttonText': button.innerText.trim(),
+                'section': 'Theme / Amusement Park',
+                'buttonURL': button.closest("a")?.href || '{{url("/contact")}}' // Default URL if href is missing
+            });
         });
     });
-    
-    document.getElementById('Send_Us_Message2').addEventListener('click', function() {
-        window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': 'Send_Us_Message2',
-        'buttonText': this.textContent
-        });
-    });
+});
     
 </script>
 @endpush

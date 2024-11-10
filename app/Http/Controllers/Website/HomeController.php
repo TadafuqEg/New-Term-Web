@@ -164,5 +164,15 @@ class HomeController extends ApiController
 
           return response($sitemap)->header('Content-Type', 'text/xml');
       }
+////////////////////////////////////////////////////////////////////
+      public function terms_conditions(){
+        return view('website.terms_conditions');
+      }
+      public function privacy_notice(){
+        return view('website.privacy_notice');
+      }
+      public function cookies_policy(){
+        return view('website.cookies_policy');
+      }
 
 }

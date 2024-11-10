@@ -69,6 +69,57 @@
 </div>
 @endsection
 @push('scripts')
+<script>
+    // Initialize dataLayer if it doesn't already exist
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+            'event': 'pageview',
+            'page': {
+                'url': window.location.href,
+                'title': document.title,
+                'category': 'Contact Us'
+            }
+        });
+        document.getElementById('first-name').addEventListener('focus', function() {
+        window.dataLayer.push({
+            'event': 'form_interaction',
+            'field': 'first_name',
+            'interaction_type': 'focus'
+        });
+    });
+
+    document.getElementById('last-name').addEventListener('focus', function() {
+        window.dataLayer.push({
+            'event': 'form_interaction',
+            'field': 'last_name',
+            'interaction_type': 'focus'
+        });
+    });
+
+    document.getElementById('email').addEventListener('focus', function() {
+        window.dataLayer.push({
+            'event': 'form_interaction',
+            'field': 'email',
+            'interaction_type': 'focus'
+        });
+    });
+
+    document.getElementById('phone').addEventListener('focus', function() {
+        window.dataLayer.push({
+            'event': 'form_interaction',
+            'field': 'phone',
+            'interaction_type': 'focus'
+        });
+    });
+
+    document.getElementById('message').addEventListener('focus', function() {
+        window.dataLayer.push({
+            'event': 'form_interaction',
+            'field': 'message',
+            'interaction_type': 'focus'
+        });
+    });
+    </script>
     <script>
         $(document).ready(function() {
         $('#contact-form-container').on('submit', function(event) {
@@ -98,10 +149,25 @@
                     // Handle the success response here
                     // console.log(response);
                     //showPopup('Success! Form submitted successfully.');
+                    
+                   
+                    const formData = {
+                        'first_name': document.getElementById('first-name').value,
+                        'last_name': document.getElementById('last-name').value,
+                        'email': document.getElementById('email').value,
+                        'phone': document.getElementById('phone').value,
+                        'message': document.getElementById('message').value
+                    };
+
                     window.dataLayer.push({
-                        'event': 'formSubmit',
-                        'formId': 'Contact_Us',
-                        'formName': 'Contact Us'
+                        'event': 'form_submission',
+                        'form': {
+                            'form_id': 'Contact_Us',
+                            'form_data': formData,
+                            'form_name': 'Contact Us Form',
+                            'page_url': window.location.href
+                        }
+                        
                     });
                     let myPopup = $('#myPopup');
                     myPopup.addClass("show");

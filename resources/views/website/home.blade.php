@@ -388,36 +388,58 @@
     });
 </script>
 <script>
-    document.getElementById('Book_Call').addEventListener('click', function() {
-        window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': 'Book_Call',
-        'buttonText': this.textContent
-        });
-    });
     
-    document.getElementById('Read_Our_Success_Stories').addEventListener('click', function() {
+    document.addEventListener("DOMContentLoaded", function() {
         window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': 'Read_Our_Success_Stories',
-        'buttonText': this.textContent
+            'event': 'pageview',
+            'page': {
+                'url': window.location.href,
+                'title': document.title,
+                'category': 'Home'
+            }
+        });
+        // Select buttons to track
+        const bookCallButton = document.querySelector("#Book_Call");
+        const successStoriesButton = document.querySelector("#Read_Our_Success_Stories");
+        const getInTouchButtons = document.querySelectorAll("#Get_in_Touch, #Get_in_Touch2");
+
+        // Add event listener for Book Call button
+        bookCallButton?.addEventListener("click", function() {
+
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                'event': 'buttonClick',
+                'buttonId': bookCallButton.id,
+                'buttonText': bookCallButton.innerText.trim(),
+                'buttonURL': bookCallButton.closest("a").href
+            });
+        });
+
+        // Add event listener for Read Our Success Stories button
+        successStoriesButton?.addEventListener("click", function() {
+
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                'event': 'buttonClick',
+                'buttonId': successStoriesButton.id,
+                'buttonText': successStoriesButton.innerText.trim(),
+                'buttonURL': successStoriesButton.closest("a").href
+            });
+        });
+
+        // Add event listener for each Get in Touch button
+        getInTouchButtons.forEach(function(button) {
+            button?.addEventListener("click", function() {
+
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({
+                    'event': 'buttonClick',
+                    'buttonId': button.id,
+                    'buttonText': button.innerText.trim(),
+                });
+            });
         });
     });
-    document.getElementById('Get_in_Touch2').addEventListener('click', function() {
-        window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': 'Get_in_Touch',
-        'buttonText': this.textContent
-        });
-    });
-    document.getElementById('Get_in_Touch').addEventListener('click', function() {
-        window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': 'Get_in_Touch',
-        'buttonText': this.textContent
-        });
-    });
-    
 </script>
 
 

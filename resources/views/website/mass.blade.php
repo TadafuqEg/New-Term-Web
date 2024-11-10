@@ -209,19 +209,41 @@
 @endsection
 @push('scripts')
 <script>
-    document.getElementById('Elevate_Your_Strategy_Today_Go_To_Mass').addEventListener('click', function() {
+ 
+
+    document.addEventListener("DOMContentLoaded", function() {
         window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': 'Elevate_Your_Strategy_Today_Go_To_Mass',
-        'buttonText': this.textContent
+            'event': 'pageview',
+            'page': {
+                'url': window.location.href,
+                'title': document.title,
+                'category': 'Mass'
+            }
+        });
+    // Select the buttons with specific IDs
+    const strategyButton = document.querySelector("#Elevate_Your_Strategy_Today_Go_To_Mass");
+    const optimizeButton = document.querySelector("#Start_Optimizing_Now_Go_To_Mass");
+
+    // Add event listeners for button clicks
+    strategyButton.addEventListener("click", function() {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            'event': 'buttonClick',
+            'buttonId': strategyButton.id,
+            'buttonText': strategyButton.innerText.trim(),
+            'buttonURL': strategyButton.closest("a").href
         });
     });
-    document.getElementById('Start_Optimizing_Now_Go_To_Mass').addEventListener('click', function() {
+
+    optimizeButton.addEventListener("click", function() {
+        window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': 'Start_Optimizing_Now_Go_To_Mass',
-        'buttonText': this.textContent
+            'event': 'buttonClick',
+            'buttonId': optimizeButton.id,
+            'buttonText': optimizeButton.innerText.trim(),
+            'buttonURL': optimizeButton.closest("a").href
         });
     });
+});
 </script>
 @endpush

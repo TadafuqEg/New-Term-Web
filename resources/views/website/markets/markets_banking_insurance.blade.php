@@ -89,21 +89,32 @@
 @push('scripts')
 <script src="{{asset('website/logic.js')}}"></script>
 <script>
-    document.getElementById('Work_With_Us2').addEventListener('click', function() {
+    document.addEventListener("DOMContentLoaded", function() {
         window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': 'Work_With_Us2',
-        'buttonText': this.textContent
+            'event': 'pageview',
+            'page': {
+                'url': window.location.href,
+                'title': document.title,
+                'category': 'Banking / Insurance'
+            }
+        });
+    // Select "Talk to our experts" buttons to track
+    const workWithUsButtons = document.querySelectorAll("#Work_With_Us, #Work_With_Us2");
+
+    // Add event listener for each "Work With Us" button
+    workWithUsButtons.forEach(function(button) {
+        button.addEventListener("click", function() {
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                'event': 'buttonClick',
+                'buttonId': button.id,
+                'buttonText': button.innerText.trim(),
+                'section': 'Banking / Insurance',
+                'buttonURL': button.closest("a")?.href || '{{url("/contact")}}' // Default URL if href is missing
+            });
         });
     });
-    
-    document.getElementById('Work_With_Us').addEventListener('click', function() {
-        window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': 'Work_With_Us',
-        'buttonText': this.textContent
-        });
-    });
+});
     
 </script>
 @endpush

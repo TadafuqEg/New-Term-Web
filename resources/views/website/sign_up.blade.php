@@ -19,17 +19,7 @@
         })(window,document,"script","dataLayer","GTM-W4D7RJ48");
     </script>
         <!-- End Google Tag Manager -->
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            window.dataLayer.push({
-                'event': 'pageview',
-                'page': {
-                'url': window.location.href,
-                'title': document.title,
-                'category': 'blog'
-                }
-            });
-        </script>
+        
     <style>
         .log-sign{
             background-image: url("{{asset('website/assets/imgs/login.gif')}}");
@@ -211,6 +201,7 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W4D7RJ48"
         height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
+
     <div class="head">
         <nav class="navbar">
             <div class="content content2">
@@ -314,8 +305,9 @@
                     </div>
                 </div>
                 <div class="left-bottom">
-                    <a href="#">Terms and Conditions</a>
-                    <a href="#">Privacy Policy</a>
+                    <a href="{{url('/terms&conditions')}}"id="terms-conditions">Terms and Conditions</a>
+                    <a href="{{url('/privacy-policy')}}"id="privacy-policy">Privacy Policy</a>
+                    <a href="{{url('/cookies-policy')}}"id="cookies-policy">Cookies Policy</a>
                 </div>
             </div>
             <div class="footer-right f-r">
@@ -327,26 +319,113 @@
         </div>
     </div>
     <script src="{{asset('website/js/script.js')}}"></script>
+    
     <script>
-        document.getElementById('MyForm').addEventListener('submit', function() {
+        // Initialize dataLayer if it doesn't exist
+        window.dataLayer = window.dataLayer || [];
+        
+        // Push pageview event on page load
+        window.dataLayer.push({
+            'event': 'pageview',
+            'page': {
+                'url': window.location.href,
+                'title': document.title,
+                'category': 'signup'
+            }
+        });
+    
+        // Track form submission event
+        document.getElementById('MyForm').addEventListener('submit', function(event) {
+            // Prevent the default form submission to capture the event
+            event.preventDefault();
+            
+            // Push form submission data to dataLayer
             window.dataLayer.push({
-            'event': 'formSubmit',
-            'formId': 'Register_form',
-            'formName': 'Register Form'
+                'event': 'form_submission',
+                'form': {
+                    'form_id': 'MyForm',
+                    'form_name': 'Signup Form',
+                    'page_url': window.location.href
+                }
+            });
+    
+            // Optionally, submit the form after logging to the dataLayer
+            event.target.submit();
+        });
+    
+        // Track input focus events for each field
+        const formFields = ['name', 'username', 'email', 'phone', 'password'];
+        formFields.forEach(function(fieldName) {
+            document.querySelector(`[name="${fieldName}"]`).addEventListener('focus', function() {
+                
+                window.dataLayer.push({
+                    'event': 'input_focus',
+                    'input_name': fieldName,
+                    'form_name': 'Signup Form'
+                });
             });
         });
-        document.getElementById('login').addEventListener('click', function() {
+    </script>
+    <script>
+        // Initialize dataLayer if it doesn't already exist
+        window.dataLayer = window.dataLayer || [];
+    
+        // Track clicks on social media links in the footer
+        document.getElementById('footer-linkedin').addEventListener('click', function() {
             window.dataLayer.push({
-            'event': 'buttonClick',
-            'buttonId': 'login',
-            'buttonText': 'Login'
+                'event': 'footer_social_click',
+                'social_network': 'LinkedIn',
+                'page_url': window.location.href
             });
         });
-        document.getElementById('login2').addEventListener('click', function() {
+    
+        document.getElementById('footer-x').addEventListener('click', function() {
             window.dataLayer.push({
-            'event': 'buttonClick',
-            'buttonId': 'login2',
-            'buttonText': 'Login'
+                'event': 'footer_social_click',
+                'social_network': 'X (formerly Twitter)',
+                'page_url': window.location.href
+            });
+        });
+    
+        document.getElementById('footer-whatsapp').addEventListener('click', function() {
+            window.dataLayer.push({
+                'event': 'footer_social_click',
+                'social_network': 'WhatsApp',
+                'page_url': window.location.href
+            });
+        });
+    
+        // Track clicks on terms and policy links in the footer
+        document.getElementById('terms-conditions').addEventListener('click', function() {
+        window.dataLayer.push({
+            'event': 'footer_link_click',
+            'link_type': 'Terms and Conditions',
+            'page_url': window.location.href
+        });
+    });
+
+    document.getElementById('privacy-policy').addEventListener('click', function() {
+        window.dataLayer.push({
+            'event': 'footer_link_click',
+            'link_type': 'Privacy Policy',
+            'page_url': window.location.href
+        });
+    });
+
+    document.getElementById('cookies-policy').addEventListener('click', function() {
+        window.dataLayer.push({
+            'event': 'footer_link_click',
+            'link_type': 'Cookies Policy',
+            'page_url': window.location.href
+        });
+    });
+    
+        // Track "Contact Us" click event in the footer
+        document.getElementById('Contact_us').addEventListener('click', function() {
+            window.dataLayer.push({
+                'event': 'footer_contact_click',
+                'link_text': 'Contact Us',
+                'page_url': window.location.href
             });
         });
     </script>

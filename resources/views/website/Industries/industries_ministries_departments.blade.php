@@ -75,21 +75,32 @@
 @push('scripts')
 <script src="{{asset('website/logic.js')}}"></script>
 <script>
-    document.getElementById('Talk_to_us').addEventListener('click', function() {
+    document.addEventListener("DOMContentLoaded", function() {
         window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': 'Talk_to_us',
-        'buttonText': this.textContent
+            'event': 'pageview',
+            'page': {
+                'url': window.location.href,
+                'title': document.title,
+                'category': 'Ministries / Departments'
+            }
+        });
+    // Select Talk to Us buttons to track
+    const talkToUsButtons = document.querySelectorAll("#Talk_to_us, #Talk_to_us2");
+
+    // Add event listener for each Talk to Us button
+    talkToUsButtons.forEach(function(button) {
+        button.addEventListener("click", function() {
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                'event': 'buttonClick',
+                'buttonId': button.id,
+                'buttonText': button.innerText.trim(),
+                'section': 'Ministries / Departments',
+                'buttonURL': button.closest("a")?.href || '{{url("/contact")}}' // Default URL if href is missing
+            });
         });
     });
-    
-    document.getElementById('Talk_to_us2').addEventListener('click', function() {
-        window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': 'Talk_to_us2',
-        'buttonText': this.textContent
-        });
-    });
+});
     
 </script>
 @endpush

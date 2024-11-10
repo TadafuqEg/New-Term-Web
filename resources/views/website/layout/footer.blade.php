@@ -10,8 +10,9 @@
                 </div>
             </div>
             <div class="left-bottom">
-                <a href="#">Terms and Conditions</a>
-                <a href="#">Privacy Policy</a>
+                <a href="{{url('/terms&conditions')}}"id="terms-conditions">Terms and Conditions</a>
+                    <a href="{{url('/privacy-policy')}}"id="privacy-policy">Privacy Policy</a>
+                    <a href="{{url('/cookies-policy')}}"id="cookies-policy">Cookies Policy</a>
             </div>
         </div>
         <div class="footer-right f-r">

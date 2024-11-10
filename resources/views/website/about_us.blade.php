@@ -133,42 +133,61 @@
 @endsection
 @push('scripts')
 <script>
+    // Initialize dataLayer if it doesn't already exist
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+            'event': 'pageview',
+            'page': {
+                'url': window.location.href,
+                'title': document.title,
+                'category': 'About Us'
+            }
+        });
+    // Event listeners for different buttons
+
+    // Contact Us button in "Joining Forces" section
     document.getElementById('Contact_Us').addEventListener('click', function() {
         window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': 'Contact_Us',
-        'buttonText': this.textContent
+            'event': 'button_click',
+            'button_name': 'Contact Us',
+            'section': 'Joining Forces'
         });
     });
-    
+
+    // Discover What Sets Us Apart button in "Powerhouse" section
     document.getElementById('Discover_What_Sets_Us_Apart').addEventListener('click', function() {
         window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': 'Discover_What_Sets_Us_Apart',
-        'buttonText': this.textContent
+            'event': 'button_click',
+            'button_name': 'Discover What Sets Us Apart',
+            'section': 'Powerhouse'
         });
     });
+
+    // Join us and Turn Conversations into Opportunities button in "Deep WEBINT" section
     document.getElementById('Join_us_and_Turn_Conversations_into_Opportunities').addEventListener('click', function() {
         window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': 'Join_us_and_Turn_Conversations_into_Opportunities',
-        'buttonText': this.textContent
+            'event': 'button_click',
+            'button_name': 'Join us and Turn Conversations into Opportunities',
+            'section': 'Deep WEBINT'
         });
     });
+
+    // Join Us on a Journey to Success button in "Meet Our Team" section
     document.getElementById('Join_Us_on_a_Journey_to_Success').addEventListener('click', function() {
         window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': 'Join_Us_on_a_Journey_to_Success',
-        'buttonText': this.textContent
+            'event': 'button_click',
+            'button_name': 'Join Us on a Journey to Success',
+            'section': 'Meet Our Team'
         });
     });
+
+    // Join the Legacy button in "Our Trusted Partners" section
     document.getElementById('Join_the_Legacy').addEventListener('click', function() {
         window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': 'Join_the_Legacy',
-        'buttonText': this.textContent
+            'event': 'button_click',
+            'button_name': 'Join the Legacy',
+            'section': 'Our Trusted Partners'
         });
     });
-    
 </script>
 @endpush

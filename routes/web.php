@@ -53,7 +53,12 @@ Route::get('/markets-oil-gas', [HomeController::class, 'markets_oil_gas'])->name
 Route::get('/markets-theme-amusement-parks', [HomeController::class, 'markets_theme_amusement_parks'])->name('markets_theme_amusement_parks');
 Route::get('/markets-FMCG', [HomeController::class, 'markets_FMCG'])->name('markets_FMCG');
 Route::get('/markets-luxury', [HomeController::class, 'markets_luxury'])->name('markets_luxury');
+////////////////////////////////////////////////////
+Route::get('/terms&conditions', [HomeController::class, 'terms_conditions'])->name('terms_conditions');
+Route::get('/privacy-policy', [HomeController::class, 'privacy_notice'])->name('privacy_policy');
+Route::get('/cookies-policy', [HomeController::class, 'cookies_policy'])->name('cookies_policy');
 
+////////////////////////////////////////////////////
 Route::get('/industries-ministries-departments', [HomeController::class, 'industries_ministries_departments'])->name('industries_ministries_departments');
 Route::get('/industries-fashion', [HomeController::class, 'industries_fashion'])->name('industries_fashion');
 Route::get('/emdad-products', function () {

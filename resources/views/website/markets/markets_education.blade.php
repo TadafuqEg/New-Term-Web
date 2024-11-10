@@ -93,21 +93,32 @@
 @push('scripts')
 <script src="{{asset('website/logic.js')}}"></script>
 <script>
-    document.getElementById('Start_With_Us').addEventListener('click', function() {
+    document.addEventListener("DOMContentLoaded", function() {
         window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': 'Start_With_Us',
-        'buttonText': this.textContent
+            'event': 'pageview',
+            'page': {
+                'url': window.location.href,
+                'title': document.title,
+                'category': 'Education'
+            }
+        });
+    // Select "Talk to our experts" buttons to track
+    const talkToExpertsButtons = document.querySelectorAll("#Start_With_Us, #Start_With_Us2");
+
+    // Add event listener for each "Talk to our experts" button
+    talkToExpertsButtons.forEach(function(button) {
+        button.addEventListener("click", function() {
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                'event': 'buttonClick',
+                'buttonId': button.id,
+                'buttonText': button.innerText.trim(),
+                'section': 'Education',
+                'buttonURL': button.closest("a")?.href || '{{url("/contact")}}' // Default URL if href is missing
+            });
         });
     });
-    
-    document.getElementById('Start_With_Us2').addEventListener('click', function() {
-        window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': 'Start_With_Us2',
-        'buttonText': this.textContent
-        });
-    });
+});
     
 </script>
 @endpush

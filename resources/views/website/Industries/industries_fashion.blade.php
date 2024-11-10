@@ -74,21 +74,32 @@
 @push('scripts')
 <script src="{{asset('website/logic.js')}}"></script>
 <script>
-    document.getElementById('Connect_With_Us').addEventListener('click', function() {
+  document.addEventListener("DOMContentLoaded", function() {
         window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': 'Connect_With_Us',
-        'buttonText': this.textContent
+            'event': 'pageview',
+            'page': {
+                'url': window.location.href,
+                'title': document.title,
+                'category': 'Fashion'
+            }
+        });
+    // Select Talk to Us buttons to track
+    const connectWithUsButtons = document.querySelectorAll("#Connect_With_Us, #Connect_With_Us2");
+
+    // Add event listener for each Connect With Us button
+    connectWithUsButtons.forEach(function(button) {
+        button.addEventListener("click", function() {
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                'event': 'buttonClick',
+                'buttonId': button.id,
+                'buttonText': button.innerText.trim(),
+                'section': 'Fashion',
+                'buttonURL': button.closest("a")?.href || '{{url("/contact")}}' // Default URL if href is missing
+            });
         });
     });
-    
-    document.getElementById('Connect_With_Us2').addEventListener('click', function() {
-        window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': 'Connect_With_Us2',
-        'buttonText': this.textContent
-        });
-    });
+});
     
 </script>
 @endpush

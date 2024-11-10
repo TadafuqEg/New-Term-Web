@@ -32,17 +32,7 @@
         })(window,document,"script","dataLayer","GTM-W4D7RJ48");
     </script>
         <!-- End Google Tag Manager -->
-   <script>
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
-            'event': 'pageview',
-            'page': {
-            'url': window.location.href,
-            'title': document.title,
-            'category': 'blog'
-            }
-        });
-    </script>
+   
         <style>
             .popup {
                 position: fixed;
@@ -108,24 +98,71 @@
     <!-- Owl Carousel JS -->
     
     <script src="{{asset('website/js/script.js')}}"></script>
-    @stack('scripts')
-   <script>
+    <script>
+        // Initialize dataLayer if it doesn't already exist
+        window.dataLayer = window.dataLayer || [];
     
-    document.getElementById('Contact_us').addEventListener('click', function() {
+        // Track clicks on social media links in the footer
+        document.getElementById('footer-linkedin').addEventListener('click', function() {
+            window.dataLayer.push({
+                'event': 'footer_social_click',
+                'social_network': 'LinkedIn',
+                'page_url': window.location.href
+            });
+        });
+    
+        document.getElementById('footer-x').addEventListener('click', function() {
+            window.dataLayer.push({
+                'event': 'footer_social_click',
+                'social_network': 'X (formerly Twitter)',
+                'page_url': window.location.href
+            });
+        });
+    
+        document.getElementById('footer-whatsapp').addEventListener('click', function() {
+            window.dataLayer.push({
+                'event': 'footer_social_click',
+                'social_network': 'WhatsApp',
+                'page_url': window.location.href
+            });
+        });
+    
+        // Track clicks on terms and policy links in the footer
+        document.getElementById('terms-conditions').addEventListener('click', function() {
         window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': 'Contact_us',
-        'buttonText': 'Contact Us'
+            'event': 'footer_link_click',
+            'link_type': 'Terms and Conditions',
+            'page_url': window.location.href
         });
     });
-    document.getElementById('Login').addEventListener('click', function() {
+
+    document.getElementById('privacy-policy').addEventListener('click', function() {
         window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': 'Login',
-        'buttonText': 'Login'
+            'event': 'footer_link_click',
+            'link_type': 'Privacy Policy',
+            'page_url': window.location.href
         });
     });
-   </script>
+
+    document.getElementById('cookies-policy').addEventListener('click', function() {
+        window.dataLayer.push({
+            'event': 'footer_link_click',
+            'link_type': 'Cookies Policy',
+            'page_url': window.location.href
+        });
+    });
+    
+        // Track "Contact Us" click event in the footer
+        document.getElementById('Contact_us').addEventListener('click', function() {
+            window.dataLayer.push({
+                'event': 'footer_contact_click',
+                'link_text': 'Contact Us',
+                'page_url': window.location.href
+            });
+        });
+    </script>
+    @stack('scripts')
+   
     <script>
         $(document).ready(function() {
            $('#contact-form-container2').on('submit', function(event) {
@@ -154,10 +191,14 @@
                     // Handle the success response here
                     // console.log(response);
                     //showPopup('Success! Form submitted successfully.');
+                    
                     window.dataLayer.push({
-                        'event': 'formSubmit',
-                        'formId': 'Get_in_Touch',
-                        'formName': 'Get in Touch'
+                        'event': 'form_submission',
+                        'form': {
+                            'form_id': 'Get_in_Touch',
+                            'form_name': 'Get in Touch Form',
+                            'page_url': window.location.href
+                        }
                     });
                     let myPopup = $('#myPopup');
                     myPopup.addClass("show");

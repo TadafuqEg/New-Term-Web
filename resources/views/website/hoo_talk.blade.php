@@ -207,18 +207,39 @@
 @endsection
 @push('scripts')
 <script>
-    document.getElementById('Take_Control_Today_Go_To_Hoo_Talk').addEventListener('click', function() {
+    
+    document.addEventListener("DOMContentLoaded", function() {
         window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': 'Take_Control_Today_Go_To_Hoo_Talk',
-        'buttonText': this.textContent
+            'event': 'pageview',
+            'page': {
+                'url': window.location.href,
+                'title': document.title,
+                'category': 'Hoo Talk'
+            }
         });
-    });
-    document.getElementById('Get_Started_Now_Go_To_Hoo_Talk').addEventListener('click', function() {
-        window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': 'Get_Started_Now_Go_To_Hoo_Talk',
-        'buttonText': this.textContent
+        // Select the buttons with specific IDs
+        const controlButton = document.querySelector("#Take_Control_Today_Go_To_Hoo_Talk");
+        const getStartedButton = document.querySelector("#Get_Started_Now_Go_To_Hoo_Talk");
+
+        // Add event listeners for button clicks
+        controlButton.addEventListener("click", function() {
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                'event': 'buttonClick',
+                'buttonId': controlButton.id,
+                'buttonText': controlButton.innerText.trim(),
+                'buttonURL': controlButton.closest("a").href
+            });
+        });
+
+        getStartedButton.addEventListener("click", function() {
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                'event': 'buttonClick',
+                'buttonId': getStartedButton.id,
+                'buttonText': getStartedButton.innerText.trim(),
+                'buttonURL': getStartedButton.closest("a").href
+            });
         });
     });
 </script>

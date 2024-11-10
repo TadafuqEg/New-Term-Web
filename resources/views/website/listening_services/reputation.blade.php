@@ -68,19 +68,38 @@
 @endsection
 @push('scripts')
 <script>
-    document.getElementById('Contact_Us').addEventListener('click', function() {
+     document.addEventListener("DOMContentLoaded", function() {
         window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': 'Contact_Us',
-        'buttonText': this.textContent
+            'event': 'pageview',
+            'page': {
+                'url': window.location.href,
+                'title': document.title,
+                'category': 'Reputation & Perception Monitoring'
+            }
         });
-    });
-    document.getElementById('Take_Control_Today_Go_To_Hoo_Talk').addEventListener('click', function() {
-        window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': 'Take_Control_Today_Go_To_Hoo_Talk',
-        'buttonText': this.textContent
-        });
-    });
+    // Select the "Contact Us" and "Elevate Your Strategy Today!" buttons
+    const contactButton = document.querySelector("#Contact_Us");
+    const elevateButton = document.querySelector("#Take_Control_Today_Go_To_Hoo_Talk");
+
+    // Function to track button clicks
+    function trackButtonClick(button, section) {
+        if (button) {
+            button.addEventListener("click", function() {
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({
+                    'event': 'buttonClick',
+                    'buttonId': button.id,
+                    'buttonText': button.innerText.trim(),
+                    'section': section,
+                    'buttonURL': button.closest("a")?.href || '' // Default URL if href is missing
+                });
+            });
+        }
+    }
+
+    // Track button clicks for both buttons
+    trackButtonClick(contactButton, 'LISTENING SERVICES');
+    trackButtonClick(elevateButton, 'LISTENING SERVICES');
+});
 </script>
 @endpush

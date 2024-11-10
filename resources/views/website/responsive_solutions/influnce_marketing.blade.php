@@ -70,19 +70,38 @@
 @endsection
 @push('scripts')
 <script>
-    document.getElementById('Contact_Us').addEventListener('click', function() {
+   document.addEventListener("DOMContentLoaded", function() {
         window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': 'Contact_Us',
-        'buttonText': this.textContent
+            'event': 'pageview',
+            'page': {
+                'url': window.location.href,
+                'title': document.title,
+                'category': 'Influence marketing operations'
+            }
         });
-    });
-    document.getElementById('Elevate_Your_Strategy_Today_Go_To_Mass').addEventListener('click', function() {
-        window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': 'Elevate_Your_Strategy_Today_Go_To_Mass',
-        'buttonText': this.textContent
-        });
-    });
+    // Select the "Contact Us" and "Elevate Your Strategy Today!" buttons
+    const contactButton = document.querySelector("#Contact_Us");
+    const elevateButton = document.querySelector("#Elevate_Your_Strategy_Today_Go_To_Mass");
+
+    // Function to track button clicks
+    function trackButtonClick(button, section) {
+        if (button) {
+            button.addEventListener("click", function() {
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({
+                    'event': 'buttonClick',
+                    'buttonId': button.id,
+                    'buttonText': button.innerText.trim(),
+                    'section': section,
+                    'buttonURL': button.closest("a")?.href || '' // Default URL if href is missing
+                });
+            });
+        }
+    }
+
+    // Track button clicks for both buttons
+    trackButtonClick(contactButton, 'RESPONSIVE SOLUTIONS');
+    trackButtonClick(elevateButton, 'RESPONSIVE SOLUTIONS');
+});
 </script>
 @endpush

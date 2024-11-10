@@ -94,21 +94,32 @@
 @push('scripts')
 <script src="{{asset('website/logic.js')}}"></script>
 <script>
-    document.getElementById("Let's_Chat").addEventListener('click', function() {
+     document.addEventListener("DOMContentLoaded", function() {
         window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': "Let's_Chat",
-        'buttonText': this.textContent
+            'event': 'pageview',
+            'page': {
+                'url': window.location.href,
+                'title': document.title,
+                'category': 'Mass Retail'
+            }
+        });
+    // Select "Talk to our experts" buttons to track
+    const talkToExpertsButtons = document.querySelectorAll("#Let's_Chat, #Let's_Chat2");
+
+    // Add event listener for each "Talk to our experts" button
+    talkToExpertsButtons.forEach(function(button) {
+        button.addEventListener("click", function() {
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                'event': 'buttonClick',
+                'buttonId': button.id,
+                'buttonText': button.innerText.trim(),
+                'section': 'Mass Retail',
+                'buttonURL': button.closest("a")?.href || '{{url("/contact")}}' // Default URL if href is missing
+            });
         });
     });
-    
-    document.getElementById("Let's_Chat2").addEventListener('click', function() {
-        window.dataLayer.push({
-        'event': 'buttonClick',
-        'buttonId': "Let's_Chat2",
-        'buttonText': this.textContent
-        });
-    });
+});
     
 </script>
 @endpush
