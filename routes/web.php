@@ -58,6 +58,9 @@ Route::get('/terms&conditions', [HomeController::class, 'terms_conditions'])->na
 Route::get('/privacy-policy', [HomeController::class, 'privacy_notice'])->name('privacy_policy');
 Route::get('/cookies-policy', [HomeController::class, 'cookies_policy'])->name('cookies_policy');
 
+
+Route::get('/info', [AuthController::class, 'info'])->name('info');
+
 ////////////////////////////////////////////////////
 Route::get('/industries-ministries-departments', [HomeController::class, 'industries_ministries_departments'])->name('industries_ministries_departments');
 Route::get('/industries-fashion', [HomeController::class, 'industries_fashion'])->name('industries_fashion');

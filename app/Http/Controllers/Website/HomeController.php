@@ -115,6 +115,11 @@ class HomeController extends ApiController
       public function industries_fashion(){
         return view('website.Industries.industries_fashion');
       }
+
+
+      public function info(){
+        return view('website.info');
+      }
       
       //////////////////////////////////////////////////////////////
       public function sitemap()
