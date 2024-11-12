@@ -37,15 +37,9 @@
     </div>
 
     
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SZ2L3X8JKV"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-SZ2L3X8JKV');
-    </script>
     
-    {{-- <script>
+    
+    <script>
         
         // Initialize dataLayer if it doesn't exist
         window.dataLayer = window.dataLayer || [];
@@ -56,11 +50,11 @@
             'page': {
                 'url': window.location.href,
                 'title': document.title,
-                'category': 'signup'
+                'category': 'info'
             }
         });
         
-    </script> --}}
+    </script>
     
    
 </body>
