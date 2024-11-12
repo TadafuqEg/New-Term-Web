@@ -216,3 +216,17 @@
     </div>
 </div>
 @endsection
+@push('scripts')
+<script>
+  // Initialize dataLayer if it doesn't already exist
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+          'event': 'pageview',
+          'page': {
+              'url': window.location.href,
+              'title': document.title,
+              'category': 'Terms & Conditions'
+          }
+      });
+</script>
+@endpush
