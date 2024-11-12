@@ -163,7 +163,7 @@
     </style>
 @endsection
 @section('content')
-
+ 
 <div class="contain">
     @include('website.layout.fixed_div')
 
@@ -209,8 +209,6 @@
 @endsection
 @push('scripts')
 <script>
- 
-
     document.addEventListener("DOMContentLoaded", function() {
         window.dataLayer.push({
             'event': 'pageview',
