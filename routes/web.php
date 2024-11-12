@@ -59,7 +59,7 @@ Route::get('/privacy-policy', [HomeController::class, 'privacy_notice'])->name('
 Route::get('/cookies-policy', [HomeController::class, 'cookies_policy'])->name('cookies_policy');
 
 
-Route::get('/info', [AuthController::class, 'info'])->name('info');
+Route::get('/info', [HomeController::class, 'info'])->name('info');
 
 ////////////////////////////////////////////////////
 Route::get('/industries-ministries-departments', [HomeController::class, 'industries_ministries_departments'])->name('industries_ministries_departments');
