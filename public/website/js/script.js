@@ -1,13 +1,13 @@
 
 // navbar-toggle
-document.addEventListener('DOMContentLoaded', function () {
-    const navbarToggle = document.querySelector('.navbar-toggle');
-    const navbarContainer = document.querySelector('.navbar-container');
+// document.addEventListener('DOMContentLoaded', function () {
+//     const navbarToggle = document.querySelector('.navbar-toggle');
+//     const navbarContainer = document.querySelector('.navbar-container');
 
-    navbarToggle.addEventListener('click', function () {
-        navbarContainer.classList.toggle('open');
-    });
-});
+//     navbarToggle.addEventListener('click', function () {
+//         navbarContainer.classList.toggle('open');
+//     });
+// });
 
 // navbar-menu
 const body = document.querySelector("body");
@@ -24,9 +24,10 @@ cancelBtn.onclick = () => {
     navbar.classList.remove("show");
     menuBtn.classList.remove("hide");
 }
-window.onscroll = () => {
-    this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
+window.onscroll = function() {
+    window.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
 }
+
 
 
 
