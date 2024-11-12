@@ -117,9 +117,7 @@ class HomeController extends ApiController
       }
 
 
-      public function info(){
-        return view('website.info');
-      }
+     
       
       //////////////////////////////////////////////////////////////
       public function sitemap()
